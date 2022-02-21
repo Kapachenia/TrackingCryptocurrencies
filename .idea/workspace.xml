@@ -57,10 +57,25 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645474284863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
+    <state x="2472" y="246" key="Vcs.Push.Dialog.v2" timestamp="1645475789030">
+      <screen x="1920" y="7" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="246" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645475789030" />
   </component>
 </project>

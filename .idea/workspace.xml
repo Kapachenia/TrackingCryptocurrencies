@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bll/setReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Routes/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25QzlQAC2UTm9Zwp0uk45HvWZoe" />
@@ -20,7 +36,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="ts.external.directory.path" value="D:\Front-end\it-inc\test\my-app\node_modules\typescript\lib" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645474248709</updated>
       <workItem from="1645474253493" duration="34000" />
-      <workItem from="1645475075172" duration="283000" />
+      <workItem from="1645475075172" duration="616000" />
     </task>
     <servers />
   </component>

@@ -19,18 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bll/setReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Routes/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="pagination" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,6 +79,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rendered data from the API, added store" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rendered data from the API, added store" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645474284863">

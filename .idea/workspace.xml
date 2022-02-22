@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added react-redux dependencies">
+      <change afterPath="$PROJECT_DIR$/src/ui/Briefcase/Briefcase.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Routes/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Routes/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DisplayingTheList" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +92,9 @@
       <workItem from="1645474253493" duration="34000" />
       <workItem from="1645475075172" duration="616000" />
       <workItem from="1645506044783" duration="3707000" />
-      <workItem from="1645514169660" duration="477000" />
+      <workItem from="1645514169660" duration="2443000" />
+      <workItem from="1645516632432" duration="173000" />
+      <workItem from="1645516828990" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="Rendered API">
       <created>1645476059675</created>
@@ -108,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645514405360</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added react-redux dependencies">
+      <created>1645514656443</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645514656443</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,22 +155,22 @@
     </state>
     <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645509959831" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
-    <state width="1208" height="118" key="GridCell.Tab.0.bottom" timestamp="1645514638782">
+    <state width="1130" height="118" key="GridCell.Tab.0.bottom" timestamp="1645516806506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1208" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645514638782" />
-    <state width="1208" height="118" key="GridCell.Tab.0.center" timestamp="1645514638782">
+    <state width="1130" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
+    <state width="1130" height="118" key="GridCell.Tab.0.center" timestamp="1645516806506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1208" height="118" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645514638782" />
-    <state width="1208" height="118" key="GridCell.Tab.0.left" timestamp="1645514638782">
+    <state width="1130" height="118" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
+    <state width="1130" height="118" key="GridCell.Tab.0.left" timestamp="1645516806506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1208" height="118" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645514638782" />
-    <state width="1208" height="118" key="GridCell.Tab.0.right" timestamp="1645514638782">
+    <state width="1130" height="118" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
+    <state width="1130" height="118" key="GridCell.Tab.0.right" timestamp="1645516806506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1208" height="118" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645514638782" />
+    <state width="1130" height="118" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
     <state x="0" y="87" key="MergeDialog" timestamp="1645514483420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,9 +179,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="511" y="389" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645514483420" />
-    <state x="2472" y="246" key="Vcs.Push.Dialog.v2" timestamp="1645476191587">
-      <screen x="1920" y="7" width="1920" height="1040" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1645514659511">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645514659511" />
     <state x="2472" y="246" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476191587" />
     <state x="761" y="308" key="git4idea.merge.GitMergeDialog" timestamp="1645514494369">
       <screen x="0" y="0" width="1920" height="1040" />

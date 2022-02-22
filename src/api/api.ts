@@ -10,5 +10,8 @@ export const itemsAPI = {
     },
     setDetailsInformation(id: string) {
         return instance.get(`/${id}`)
+    },
+    setDetailsHistory(id: string | undefined) {
+        return instance.get(`/${id}/history?interval=m1`)
     }
 }

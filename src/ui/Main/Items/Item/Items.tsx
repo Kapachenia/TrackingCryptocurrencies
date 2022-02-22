@@ -1,7 +1,7 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import { setDetailsTC } from "../../../../bll/serDetailsInformation";
-import { useNavigate } from "react-router-dom";
+import {setDetailsTC, setHistoryTC} from "../../../../bll/serDetailsInformation";
+import {useNavigate} from "react-router-dom";
 
 type ItemType = {
     symbol: string
@@ -13,31 +13,31 @@ type ItemType = {
 
 export const Item = (props: ItemType) => {
 
-let navigate = useNavigate()
+    let navigate = useNavigate()
 
     const dispatch = useDispatch()
 
 
-const clickHandler = () => {
-    let result = props.name
-    result.toLowerCase()
-    dispatch(setDetailsTC(result.toLowerCase()))
-    navigate("/detailInformation")
+    const clickHandler = () => {
+        dispatch(setDetailsTC(props.name.toLowerCase()))
 
-    console.log(props.name)
-}
+        dispatch(setHistoryTC(props.name.toLowerCase()))
+        navigate("/detailInformation")
+
+        // console.log(props.name)
+    }
 
 
     return (
         <tbody>
-            <tr>
-                <td>{props.rank}</td>
-                <td>{props.symbol}</td>
-                <td onClick={clickHandler}>{props.name}</td>
-                <td>${Math.floor(Number.parseInt(props.marketCapUsd))}</td>
-                <td>{Math.floor(Number.parseInt(props.supply))}</td>
-                {/*<button>+</button>*/}
-            </tr>
+        <tr>
+            <td>{props.rank}</td>
+            <td>{props.symbol}</td>
+            <td onClick={clickHandler}>{props.name}</td>
+            <td>${Math.floor(Number.parseInt(props.marketCapUsd))}</td>
+            <td>{Math.floor(Number.parseInt(props.supply))}</td>
+            {/*<button>+</button>*/}
+        </tr>
         </tbody>
 
     )

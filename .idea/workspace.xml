@@ -19,17 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added a page with detailed information">
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added graph, scaling">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Chart/Chart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Connected the routing">
-      <change afterPath="$PROJECT_DIR$/src/bll/serDetailsInformation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/serDetailsInformation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/serDetailsInformation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bll/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pageWithDetailedInformation" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,6 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -141,14 +143,6 @@
       <option name="project" value="LOCAL" />
       <updated>1645525878694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
-    <task id="LOCAL-00005" summary="Connected the routing">
-      <created>1645518223021</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1645518223021</updated>
-    </task>
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
@@ -174,7 +168,9 @@
     <MESSAGE value="Added react-redux dependencies" />
     <MESSAGE value="Connected the routing" />
     <MESSAGE value="Added a page with detailed information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a page with detailed information" />
+    <MESSAGE value="fix ide" />
+    <MESSAGE value="Added graph, scaling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added graph, scaling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645527496883">
@@ -182,22 +178,22 @@
     </state>
     <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645527496883" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
-    <state width="1130" height="119" key="GridCell.Tab.0.bottom" timestamp="1645528321687">
+    <state width="1300" height="167" key="GridCell.Tab.0.bottom" timestamp="1645546137904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
-    <state width="1130" height="119" key="GridCell.Tab.0.center" timestamp="1645528321687">
+    <state width="1300" height="167" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645546137904" />
+    <state width="1300" height="167" key="GridCell.Tab.0.center" timestamp="1645546137904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="119" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
-    <state width="1130" height="119" key="GridCell.Tab.0.left" timestamp="1645528321687">
+    <state width="1300" height="167" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645546137904" />
+    <state width="1300" height="167" key="GridCell.Tab.0.left" timestamp="1645546137904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="119" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
-    <state width="1130" height="119" key="GridCell.Tab.0.right" timestamp="1645528321687">
+    <state width="1300" height="167" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645546137904" />
+    <state width="1300" height="167" key="GridCell.Tab.0.right" timestamp="1645546137904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="119" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
+    <state width="1300" height="167" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645546137904" />
     <state x="0" y="87" key="MergeDialog" timestamp="1645514483420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,5 +212,9 @@
     </state>
     <state x="761" y="308" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645514494369" />
     <state x="2681" y="315" key="git4idea.merge.GitMergeDialog/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476076715" />
+    <state x="136" y="244" key="run.anything.popup" timestamp="1645534858540">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="136" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645534858540" />
   </component>
 </project>

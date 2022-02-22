@@ -1,6 +1,6 @@
 import React from "react";
-import {useSelector} from "react-redux";
-import {itemType} from "../../../bll/setReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {itemType, setCurrencyTC} from "../../../bll/setReducer";
 import {AppRootStoreType} from "../../../bll/store";
 import {Item} from "./Item/Items";
 
@@ -13,9 +13,9 @@ export const Items = () => {
 
     const dispatch = useDispatch()
 
-    const setCoins = () => {
-        dispatch(setCurrencyTC(0))
-    }
+    // const setCoins = () => {
+    //     dispatch(setCurrencyTC(0))
+    // }
 
     const setPagination = (p: number) => {
         console.log(p)

@@ -18,6 +18,7 @@ function App() {
     return (
         <div className="App">
 
+
             <NavLink to={'/'}>Main</NavLink>
             <NavLink to={'/briefcase'}>Briefcase</NavLink>
             <NavLink to={'/detailInformation'}>DetailInformation</NavLink>

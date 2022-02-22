@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {itemType, setCurrencyTC} from "../../../bll/setReducer";
 import {AppRootStoreType} from "../../../bll/store";
-import {Item} from "./Item/Items";
+import {Item} from "./Item/Item";
 
 export const Items = () => {
 
@@ -40,6 +40,7 @@ export const Items = () => {
                         <th>Наименование</th>
                         <th>Предложение</th>
                         <th>Доступно</th>
+                        <th>Купить</th>
                     </tr>
                     </thead>
                     {itemCurrency.map(m => (<Item

@@ -1,19 +1,18 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import {useDispatch} from "react-redux";
 import {NavLink, Route, Routes} from "react-router-dom";
 import {Main} from "./ui/Main/Main";
 import {Briefcase} from "./ui/Briefcase/Briefcase";
 import {DetailInformation} from "./ui/DetailInformation/DetailInformation";
-import {setCurrencyTC} from "./bll/setReducer";
 
 function App() {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-      dispatch(setCurrencyTC(0))
-    }, [])
+    // useEffect(() => {
+    //   dispatch(setCurrencyTC(0))
+    // }, [])
 
 
     return (

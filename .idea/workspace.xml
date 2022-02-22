@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added react-redux dependencies" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added a page with detailed information">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="pageWithDetailedInformation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +67,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -114,6 +118,20 @@
       <option name="project" value="LOCAL" />
       <updated>1645514656443</updated>
     </task>
+    <task id="LOCAL-00005" summary="Connected the routing">
+      <created>1645518223021</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645518223021</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added a page with detailed information">
+      <created>1645525878694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645525878694</updated>
+    </task>
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
@@ -138,30 +156,31 @@
     <MESSAGE value="for merge" />
     <MESSAGE value="Added react-redux dependencies" />
     <MESSAGE value="Connected the routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected the routing" />
+    <MESSAGE value="Added a page with detailed information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a page with detailed information" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645509959831">
+    <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645527496883">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645509959831" />
+    <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645527496883" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
-    <state width="1130" height="118" key="GridCell.Tab.0.bottom" timestamp="1645516806506">
+    <state width="1130" height="119" key="GridCell.Tab.0.bottom" timestamp="1645528321687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
-    <state width="1130" height="118" key="GridCell.Tab.0.center" timestamp="1645516806506">
+    <state width="1130" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
+    <state width="1130" height="119" key="GridCell.Tab.0.center" timestamp="1645528321687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="118" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
-    <state width="1130" height="118" key="GridCell.Tab.0.left" timestamp="1645516806506">
+    <state width="1130" height="119" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
+    <state width="1130" height="119" key="GridCell.Tab.0.left" timestamp="1645528321687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="118" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
-    <state width="1130" height="118" key="GridCell.Tab.0.right" timestamp="1645516806506">
+    <state width="1130" height="119" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
+    <state width="1130" height="119" key="GridCell.Tab.0.right" timestamp="1645528321687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1130" height="118" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645516806506" />
+    <state width="1130" height="119" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645528321687" />
     <state x="0" y="87" key="MergeDialog" timestamp="1645514483420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

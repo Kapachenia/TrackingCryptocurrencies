@@ -1,6 +1,6 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {itemType, setCurrencyTC} from "../../../bll/setReducer";
+import {useSelector} from "react-redux";
+import {itemType} from "../../../bll/setReducer";
 import {AppRootStoreType} from "../../../bll/store";
 import {Item} from "./Item/Items";
 
@@ -30,7 +30,7 @@ export const Items = () => {
 
     return (
         <div>
-            <button onClick={setCoins}>Click</button>
+            <button>Click</button>
             <div>
                 <table>
                     <thead>

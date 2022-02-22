@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Rendered API">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Items/Item/Items.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25QzlQAC2UTm9Zwp0uk45HvWZoe" />
@@ -20,7 +48,31 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../my-app-old-2" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="D:\Front-end\it-inc\test\my-app\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Front-end\it-inc\test\my-app\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,17 +85,59 @@
       <option name="presentableId" value="Default" />
       <updated>1645474248709</updated>
       <workItem from="1645474253493" duration="34000" />
-      <workItem from="1645475075172" duration="283000" />
+      <workItem from="1645475075172" duration="616000" />
+      <workItem from="1645506044783" duration="3707000" />
     </task>
+    <task id="LOCAL-00001" summary="Rendered API">
+      <created>1645476059675</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645476059675</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added pagination">
+      <created>1645476169195</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645476169195</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rendered data from the API, added store" />
+    <MESSAGE value="added pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pagination" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645474284863">
+    <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645509959831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645509959831" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
+    <state x="2472" y="246" key="Vcs.Push.Dialog.v2" timestamp="1645476191587">
+      <screen x="1920" y="7" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="246" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476191587" />
+    <state x="2681" y="315" key="git4idea.merge.GitMergeDialog" timestamp="1645476076715">
+      <screen x="1920" y="7" width="1920" height="1040" />
+    </state>
+    <state x="2681" y="315" key="git4idea.merge.GitMergeDialog/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476076715" />
   </component>
 </project>

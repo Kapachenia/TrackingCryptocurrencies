@@ -8,12 +8,13 @@ type ModalType = {
     open: boolean
     children?: React.ReactNode
     onClose: any
+    id?: string
     name?: string
 }
 
 export const Modal = (props: ModalType) => {
 
-    const [currencyValue, setCurrencyValue] = useState(123)
+    const [currencyValue, setCurrencyValue] = useState(0)
 
     const dispatch = useDispatch()
 
@@ -21,7 +22,8 @@ export const Modal = (props: ModalType) => {
 
     const handleSubmit = () => {
         // console.log(currencyValue)
-        dispatch(setInBriefcase('awd', props.name, currencyValue))
+        dispatch(setInBriefcase(props.id, props.name, currencyValue))
+        setCurrencyValue(0)
     }
 
     return ReactDom.createPortal(

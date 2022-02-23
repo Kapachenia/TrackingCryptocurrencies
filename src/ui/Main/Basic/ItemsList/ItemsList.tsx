@@ -22,6 +22,7 @@ export const ItemsList = () => {
             </tr>
             </thead>
             {itemCurrency.map(m => (<Item
+                id={m.id}
                 key={m.id}
                 symbol={m.symbol}
                 rank={m.rank}

@@ -4,10 +4,10 @@ import {setDetailsTC, setHistoryTC} from "../../../../../bll/serDetailsInformati
 import {useNavigate} from "react-router-dom";
 import s from "./Item.module.css";
 import {Modal} from "../../../../Modal/Modal";
-import {setInBriefcase} from "../../../../../bll/briefcaseReducer";
 
 
 type ItemType = {
+    id: string
     symbol: string
     rank: string
     name: string
@@ -27,8 +27,6 @@ export const Item = (props: ItemType) => {
 
         dispatch(setHistoryTC(props.name.toLowerCase()))
         navigate("/detailInformation")
-
-        // console.log(props.name)
     }
 
     const [isOpen, setIsOpen] = useState(false)
@@ -51,6 +49,7 @@ export const Item = (props: ItemType) => {
             <Modal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
+                id={props.id}
                 name={props.name}
             >
             </Modal>

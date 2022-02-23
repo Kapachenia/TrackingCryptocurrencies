@@ -19,12 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added a modal shopping cart window">
-      <change afterPath="$PROJECT_DIR$/src/ui/Header/Cart/BriefcaseItem/BriefcaseItem.module.css" afterDir="false" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Adding and removing items in the cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bll/briefcaseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/briefcaseReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Header/Cart/BriefcaseItem/BriefcaseItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Cart/BriefcaseItem/BriefcaseItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Header/Cart/Cart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Cart/Cart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Header/Cart/Cart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Cart/Cart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +108,7 @@
       <workItem from="1645516632432" duration="173000" />
       <workItem from="1645516828990" duration="1036000" />
       <workItem from="1645596227382" duration="28023000" />
-      <workItem from="1645628231536" duration="6450000" />
+      <workItem from="1645628231536" duration="8784000" />
     </task>
     <task id="LOCAL-00001" summary="Rendered API">
       <created>1645476059675</created>
@@ -177,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645628199661</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implemented adding to cart">
+      <created>1645635265550</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1645635265550</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +219,9 @@
     <MESSAGE value="Refactoring for InfoCrypto" />
     <MESSAGE value="Added display in top currencies" />
     <MESSAGE value="Added a modal shopping cart window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a modal shopping cart window" />
+    <MESSAGE value="Implemented adding to cart" />
+    <MESSAGE value="Adding and removing items in the cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding and removing items in the cart" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645598699447">
@@ -217,22 +229,22 @@
     </state>
     <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645598699447" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
-    <state width="1715" height="165" key="GridCell.Tab.0.bottom" timestamp="1645628307173">
+    <state width="1717" height="138" key="GridCell.Tab.0.bottom" timestamp="1645637496698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1715" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645628307173" />
-    <state width="1715" height="165" key="GridCell.Tab.0.center" timestamp="1645628307173">
+    <state width="1717" height="138" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645637496698" />
+    <state width="1717" height="138" key="GridCell.Tab.0.center" timestamp="1645637496698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1715" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645628307173" />
-    <state width="1715" height="165" key="GridCell.Tab.0.left" timestamp="1645628307173">
+    <state width="1717" height="138" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645637496698" />
+    <state width="1717" height="138" key="GridCell.Tab.0.left" timestamp="1645637496697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1715" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645628307173" />
-    <state width="1715" height="165" key="GridCell.Tab.0.right" timestamp="1645628307173">
+    <state width="1717" height="138" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645637496697" />
+    <state width="1717" height="138" key="GridCell.Tab.0.right" timestamp="1645637496698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1715" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645628307173" />
+    <state width="1717" height="138" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645637496698" />
     <state x="0" y="87" key="MergeDialog" timestamp="1645514483420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -241,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="511" y="389" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645514483420" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1645628201139">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1645635267493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645628201139" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645635267493" />
     <state x="2472" y="246" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476191587" />
     <state x="761" y="308" key="git4idea.merge.GitMergeDialog" timestamp="1645514494369">
       <screen x="0" y="0" width="1920" height="1040" />

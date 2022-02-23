@@ -1,13 +1,13 @@
 import React from 'react'
 import { Header } from '../Header/Header';
-import {Items} from "./Items/Items";
+import {Basic} from "./Basic/Basic";
 
 export const Main = () => {
     return (
         <div>
-            <span>Main</span>
             <Header />
-            <Items />
+            <Basic />
+            {/*<Briefcase />*/}
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
-import {setDetailsTC, setHistoryTC} from "../../../../bll/serDetailsInformation";
+import {setDetailsTC, setHistoryTC} from "../../../../../bll/serDetailsInformation";
 import {useNavigate} from "react-router-dom";
 import s from "./Item.module.css";
-import {Modal} from "../../../Modal/Modal";
+import {Modal} from "../../../../Modal/Modal";
 
 
 type ItemType = {
@@ -35,14 +35,14 @@ export const Item = (props: ItemType) => {
 
     return (
         <tbody>
-        <tr>
-            <div className={s.other_content_styles}>
+        <tr className={s.other_content_styles}>
+            {/*<div className={s.other_content_styles}>*/}
                 <td>{props.rank}</td>
                 <td>{props.symbol}</td>
                 <td onClick={clickHandler}>{props.name}</td>
                 <td>${Math.floor(Number.parseInt(props.marketCapUsd))}</td>
                 <td>{Math.floor(Number.parseInt(props.supply))}</td>
-            </div>
+            {/*</div>*/}
 
             <Modal open={isOpen}
                    onClose={() => setIsOpen(false)}

@@ -1,13 +1,15 @@
 
-const InitialStateBriefcase = {
+const InitialState = {
     currencyInBriefcase: [
         {name: 'bitcoin', count: 10},
         {name: 'adawdwa', count: 12},
     ]
 }
 
+type InitialStateType = typeof InitialState
 
-export const briefcaseReducer = (state: any = InitialStateBriefcase, action: any): any => {
+
+export const briefcaseReducer = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
     switch (action.type) {
 
         default:
@@ -21,5 +23,4 @@ export const setInBriefcase = (payload: any) => {
 
 
 
-// type ActionType = ReturnType<typeof setCurrency> |
-//     ReturnType<typeof setDetailsHistory>
+type ActionType = ReturnType<typeof setInBriefcase>

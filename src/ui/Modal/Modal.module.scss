@@ -11,9 +11,7 @@
     min-height: 200px;
     background-color: white;
     padding-top: 60px;
-
 }
-
 .overlay_style {
     position: fixed;
     top: 0;
@@ -23,20 +21,18 @@
     background-color: rgba(0, 0, 0, .5);
     z-index: 1000;
 }
-
 .wrapper {
     margin: 0 auto;
     text-align: center;
 }
-
-.wrapperButton button {
-    margin: 20px;
+.wrapperButton {
+    button {
+        margin: 20px;
+    }
 }
-
 .value {
     margin: 30px;
 }
-
 .name {
     font-size: 14px;
     font-weight: bold;

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import s from "./Modal.module.css";
+import s from "./Modal.module.scss";
 import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
 import {setInBriefcase} from "../../bll/briefcaseReducer";

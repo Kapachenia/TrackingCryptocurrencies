@@ -2,7 +2,7 @@ import React from "react";
 import {setCurrencyTC} from "../../../../bll/setReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
-import s from "./Pagination.module.css";
+import s from "./Pagination.module.scss";
 
 export const Pagination = () => {
 

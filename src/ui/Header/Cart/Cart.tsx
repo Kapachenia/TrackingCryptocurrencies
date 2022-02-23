@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Cart.module.css";
+import s from "./Cart.module.scss";
 import ReactDom from 'react-dom';
 import {BriefcaseType} from "../../../bll/briefcaseReducer";
 import {BriefcaseItem} from "./BriefcaseItem/BriefcaseItem";

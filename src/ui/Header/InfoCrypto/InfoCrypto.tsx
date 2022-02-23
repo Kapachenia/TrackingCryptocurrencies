@@ -1,7 +1,6 @@
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {AppRootStoreType} from "../../../bll/store";
-import s from "./InfoCrypto.module.css"
+import {useDispatch} from "react-redux";
+import s from "./InfoCrypto.module.scss"
 import {setDetailsTC, setHistoryTC} from "../../../bll/serDetailsInformation";
 import {useNavigate} from "react-router-dom";
 

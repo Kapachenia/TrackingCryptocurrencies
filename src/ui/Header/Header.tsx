@@ -1,11 +1,10 @@
 import React, {useState} from "react";
 import {InfoCrypto} from "./InfoCrypto/InfoCrypto";
-import s from "./Header.module.css"
+import s from "./Header.module.scss"
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
 import {itemType} from "../../bll/setReducer";
 import img from "../../asset/cart.png";
-import {Modal} from "../Modal/Modal";
 import {Cart} from "./Cart/Cart";
 import {BriefcaseType} from "../../bll/briefcaseReducer";
 

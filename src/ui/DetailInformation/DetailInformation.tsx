@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
 import {CurrencyUnit} from "../../bll/serDetailsInformation";
 import {Chart} from "../Chart/Chart";
-import s from "./DetailInformation.module.css"
+import s from "./DetailInformation.module.scss"
 import {Modal} from "../Modal/Modal";
 import {useNavigate} from "react-router-dom";
 import {setCurrencyTC} from "../../bll/setReducer";

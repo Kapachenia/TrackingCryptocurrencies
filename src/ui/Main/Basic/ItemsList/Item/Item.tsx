@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {setDetailsTC, setHistoryTC} from "../../../../../bll/serDetailsInformation";
 import {useNavigate} from "react-router-dom";
-import s from "./Item.module.css";
+import s from "./Item.module.scss";
 import {Modal} from "../../../../Modal/Modal";
 
 

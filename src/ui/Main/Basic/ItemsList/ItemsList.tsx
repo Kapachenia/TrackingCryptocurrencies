@@ -3,7 +3,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
 import {itemType} from "../../../../bll/setReducer";
-import s from "./ItemsList.module.css"
+import s from "./ItemsList.module.scss"
 
 export const ItemsList = () => {
 

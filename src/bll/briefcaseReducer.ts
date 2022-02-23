@@ -1,8 +1,8 @@
 
 const InitialState = {
     currencyInBriefcase: [
-        {name: 'bitcoin', count: 10},
-        {name: 'adawdwa', count: 12},
+        {name: 'bitcoin', count: '10'},
+        {name: 'adawdwa', count: '12'},
     ]
 }
 
@@ -21,6 +21,13 @@ export const setInBriefcase = (payload: any) => {
     return {type: "SET-DETAILS-HISTORY", payload} as const
 }
 
+export type currencyInBriefcaseType = {
+    currencyInBriefcase: Array<BriefcaseType>
+}
 
+export type BriefcaseType = {
+    name: string
+    count: string
+}
 
 type ActionType = ReturnType<typeof setInBriefcase>

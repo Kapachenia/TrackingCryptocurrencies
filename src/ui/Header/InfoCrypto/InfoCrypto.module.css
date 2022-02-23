@@ -1,9 +1,9 @@
 .wrapper {
-    display: flex;
+    display: inline-block;
     height: 15px;
     /*width: 150px;*/
     /*background-color: #fcfcfc;*/
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     /*padding: 10px;*/
     margin: 30px;
 }

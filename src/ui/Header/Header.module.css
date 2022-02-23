@@ -1,8 +1,37 @@
+.button_wrapper_styles  {
+    position: relative;
+    zIndex: 1;
+}
+
+.other_content_styles {
+    position: relative;
+    z-index: 2;
+}
+
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /*justify-content: space-between;*/
     /*background-color: navajowhite;*/
     margin: 0 auto;
     max-width: 700px;
     height: 200px;
+}
+
+.wrapperInfo {
+    /*background-color: yellowgreen;*/
+    height: 75px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cart:hover {
+    opacity: 50%;
+}
+
+img {
+    height: 70px;
 }

@@ -5,11 +5,13 @@ import s from "./Basic.module.css"
 
 export const Basic = () => {
     return (
-        <div className={s.wrapper}>
+        <div>
             <div>
-                <ItemsList />
+                <ItemsList/>
             </div>
-            <Pagination />
+            <div className={s.wrapper}>
+                <Pagination/>
+            </div>
         </div>
     )
 }

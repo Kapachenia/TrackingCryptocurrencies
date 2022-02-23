@@ -2,6 +2,7 @@ import React from "react";
 import {setCurrencyTC} from "../../../../bll/setReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
+import s from "./Pagination.module.css";
 
 export const Pagination = () => {
 
@@ -28,7 +29,7 @@ export const Pagination = () => {
     return (
         <div>
             {pages.map((p, index) => {
-                return <span key={index} onClick={() => setPagination(p)}>{p}</span>
+                return <span className={s.pointer} key={index} onClick={() => setPagination(p)}>{p}</span>
             })}
         </div>
     )

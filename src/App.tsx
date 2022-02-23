@@ -9,9 +9,9 @@ export const App = () => {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-      dispatch(setCurrencyTC(0))
-    }, [])
+    // useEffect(() => {
+    //   dispatch(setCurrencyTC(0))
+    // }, [])
 
     return (
         <div className={s.wrapperApp}>

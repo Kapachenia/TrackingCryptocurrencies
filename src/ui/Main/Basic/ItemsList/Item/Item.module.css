@@ -16,8 +16,16 @@ td {
     cursor: pointer;
 }
 
+.name:hover {
+    color: white;
+}
+
 .symbol {
     cursor: pointer;
+}
+
+.symbol:hover {
+    color: white;
 }
 
 .bue {

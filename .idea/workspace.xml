@@ -19,27 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Refactoring to create a wallet">
-      <change afterPath="$PROJECT_DIR$/src/App.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Main.module.css" afterDir="false" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Refactoring for InfoCrypto">
+      <change afterPath="$PROJECT_DIR$/src/ui/Header/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Chart/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Chart/Chart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/setReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/setReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Front-end\it-inc\test\TrackingCryptocurrencies\src\ui\Header\InfoCrypto" />
       <recent name="D:\Front-end\it-inc\test\TrackingCryptocurrencies\src\ui\Main\Basic\ItemsList" />
       <recent name="D:\Front-end\it-inc\test\TrackingCryptocurrencies\src\ui\Main\Basic" />
       <recent name="D:\Front-end\it-inc\test\TrackingCryptocurrencies\src\ui\Main\Items\Item" />
@@ -115,7 +111,7 @@
       <workItem from="1645514169660" duration="2443000" />
       <workItem from="1645516632432" duration="173000" />
       <workItem from="1645516828990" duration="1036000" />
-      <workItem from="1645596227382" duration="15183000" />
+      <workItem from="1645596227382" duration="21623000" />
     </task>
     <task id="LOCAL-00001" summary="Rendered API">
       <created>1645476059675</created>
@@ -166,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645601474336</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactoring for InfoCrypto">
+      <created>1645613093184</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645613093184</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +198,8 @@
     <MESSAGE value="Added graph, scaling" />
     <MESSAGE value="Added portal, modal window" />
     <MESSAGE value="Refactoring to create a wallet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring to create a wallet" />
+    <MESSAGE value="Refactoring for InfoCrypto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring for InfoCrypto" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645598699447">
@@ -227,10 +231,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="511" y="389" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645514483420" />
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1645557617434">
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1645613095874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645557617434" />
+    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1645613095874" />
     <state x="2472" y="246" key="Vcs.Push.Dialog.v2/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476191587" />
     <state x="761" y="308" key="git4idea.merge.GitMergeDialog" timestamp="1645514494369">
       <screen x="0" y="0" width="1920" height="1040" />

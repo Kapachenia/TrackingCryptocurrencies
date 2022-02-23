@@ -18,7 +18,7 @@ export const ItemsList = () => {
                 <th>Наименование</th>
                 <th>Предложение</th>
                 <th>Доступно</th>
-                <th>Купить</th>
+                {/*<th>Купить</th>*/}
             </tr>
             </thead>
             {itemCurrency.map(m => (<Item

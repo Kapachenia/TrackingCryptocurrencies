@@ -37,14 +37,12 @@ export const Item = (props: ItemType) => {
 
     return (
         <tbody>
-        <tr className={s.other_content_styles}>
-            {/*<div className={s.other_content_styles}>*/}
+        <tr className={s.content__other_styles}>
             <td>{props.rank}</td>
             <td className={s.symbol} onClick={clickHandler}>{props.symbol}</td>
             <td className={s.name} onClick={clickHandler}>{props.name}</td>
             <td>${Math.floor(Number.parseInt(props.marketCapUsd))}</td>
             <td>{Math.floor(Number.parseInt(props.supply))}</td>
-            {/*</div>*/}
 
             <Modal
                 open={isOpen}
@@ -54,7 +52,7 @@ export const Item = (props: ItemType) => {
             >
             </Modal>
 
-            <td className={s.button_wrapper_styles}>
+            <td className={s.wrapper__button_styles}>
                 <button className={s.bue} onClick={handleSubmit}>Купить</button>
             </td>
         </tr>

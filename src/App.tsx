@@ -14,7 +14,7 @@ export const App = () => {
     }, [])
 
     return (
-        <div className={s.wrapperApp}>
+        <div className={s.app__wrapper}>
             <RoutesApp />
         </div>
     )

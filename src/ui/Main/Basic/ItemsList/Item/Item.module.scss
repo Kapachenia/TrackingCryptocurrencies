@@ -1,26 +1,33 @@
-.button_wrapper_styles {
-    position: relative;
-    zindex: 1;
+.wrapper__button_styles {
+  position: relative;
+  z-index: 1;
 }
-.other_content_styles {
-    position: relative;
-    z-index: 2;
+
+.content__other_styles {
+  position: relative;
+  z-index: 2;
 }
+
 td {
-    padding: 5px;
+  padding: 5px;
 }
+
 .name {
-    cursor: pointer;
-&:hover {
-     color: white;
- }
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 }
+
 .symbol {
-    cursor: pointer;
-&:hover {
-     color: white;
- }
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 }
+
 .bue {
-    cursor: pointer;
+  cursor: pointer;
 }

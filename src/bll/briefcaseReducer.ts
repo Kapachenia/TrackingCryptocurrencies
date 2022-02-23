@@ -1,15 +1,7 @@
 
 const InitialState = {
     currencyInBriefcase: [
-        {id: 'awdaw', name: 'bitcoin', count: '10'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
+        {id: 'test', name: 'test', count: 'test'},
     ]
 }
 

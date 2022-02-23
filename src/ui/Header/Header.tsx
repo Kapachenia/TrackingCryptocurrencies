@@ -19,7 +19,7 @@ export const Header = () => {
     return (
         <div className={s.wrapper}>
 
-            <div className={s.wrapperInfo}>
+            <div className={s.wrapper__info}>
                 {InformationUnits.map(m => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}

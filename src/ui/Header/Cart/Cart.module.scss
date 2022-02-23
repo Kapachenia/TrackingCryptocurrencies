@@ -1,43 +1,43 @@
 .modal_styles {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    width: 500px;
-    min-height: 200px;
-    background-color: white;
-    padding-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 500px;
+  min-height: 200px;
+  background-color: white;
+  padding-top: 60px;
 
 }
 
 .overlay_style {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1000;
 }
 
 .wrapper {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .wrapperButton button {
-    margin: 20px;
+  margin: 20px;
 }
 
 .value {
-    margin: 30px;
+  margin: 30px;
 }
 
 .name {
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }

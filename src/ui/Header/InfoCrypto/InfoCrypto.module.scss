@@ -1,14 +1,17 @@
 .wrapper {
-    display: inline-block;
-    height: 15px;
-    margin: 30px;
+  display: inline-block;
+  height: 15px;
+  margin: 30px;
 }
+
 span {
-    margin: 5px;
+  margin: 5px;
 }
+
 .item {
-    cursor: pointer;
-    &:hover {
-        color: white;
-    }
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 }

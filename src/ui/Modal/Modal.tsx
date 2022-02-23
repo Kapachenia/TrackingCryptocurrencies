@@ -21,22 +21,21 @@ export const Modal = (props: ModalType) => {
     if (!props.open) return null
 
     const handleSubmit = () => {
-        // console.log(currencyValue)
         dispatch(setInBriefcase(props.id, props.name, currencyValue))
         setCurrencyValue(0)
     }
 
     return ReactDom.createPortal(
         <div className={s.wrapperPortal}>
-            <div className={s.overlay_style}/>
-            <div className={s.modal_styles}>
+            <div className={s.overlay__style}/>
+            <div className={s.modal__styles}>
                 <span className={s.name}>{props.name}</span>
                 <div>{props.children}</div>
                 <div>
                     <div className={s.value}><input type="number" value={currencyValue}
                                                       onChange={(e) => setCurrencyValue(Number(e.target.value))}/></div>
                 </div>
-                <div className={s.wrapperButton}>
+                <div className={s.wrapper__button}>
                     <button onClick={handleSubmit}>Купить</button>
                     <button onClick={props.onClose}>Close</button>
                 </div>

@@ -1,23 +1,27 @@
 import React, {useState} from "react";
 import s from "./Modal.module.css";
 import ReactDom from 'react-dom';
+import {useDispatch} from "react-redux";
+import {setInBriefcase} from "../../bll/briefcaseReducer";
 
 type ModalType = {
     open: boolean
     children?: React.ReactNode
     onClose: any
     name?: string
-
 }
 
 export const Modal = (props: ModalType) => {
 
-    const [currencyValue, setCurrencyValue] = useState('awdw')
+    const [currencyValue, setCurrencyValue] = useState(123)
+
+    const dispatch = useDispatch()
 
     if (!props.open) return null
 
     const handleSubmit = () => {
-        console.log(currencyValue)
+        // console.log(currencyValue)
+        dispatch(setInBriefcase('awd', props.name, currencyValue))
     }
 
     return ReactDom.createPortal(
@@ -28,7 +32,7 @@ export const Modal = (props: ModalType) => {
                 <div>{props.children}</div>
                 <div>
                     <div className={s.value}><input type="number" value={currencyValue}
-                                                      onChange={(e) => setCurrencyValue(e.target.value)}/></div>
+                                                      onChange={(e) => setCurrencyValue(Number(e.target.value))}/></div>
                 </div>
                 <div className={s.wrapperButton}>
                     <button onClick={handleSubmit}>Купить</button>

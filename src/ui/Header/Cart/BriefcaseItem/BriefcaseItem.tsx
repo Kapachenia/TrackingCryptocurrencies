@@ -1,4 +1,5 @@
 import React from "react";
+import s from "./BriefcaseItem.module.css"
 
 type BriefcaseItemType = {
     name: string
@@ -7,7 +8,7 @@ type BriefcaseItemType = {
 
 export const BriefcaseItem = (props: BriefcaseItemType) => {
     return (
-        <div>
+        <div className={s.wrapper}>
             <div>
                 {props.name}
             </div>

@@ -7,3 +7,19 @@
     position: relative;
     z-index: 2;
 }
+
+td {
+    padding: 5px;
+}
+
+.name {
+    cursor: pointer;
+}
+
+.symbol {
+    cursor: pointer;
+}
+
+.bue {
+    cursor: pointer;
+}

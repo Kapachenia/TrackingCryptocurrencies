@@ -6,7 +6,7 @@ type ModalType = {
     open: boolean
     children?: React.ReactNode
     onClose: any
-    name: string
+    name?: string
 
 }
 

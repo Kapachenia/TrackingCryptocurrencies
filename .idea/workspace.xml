@@ -19,20 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Added portal, modal window">
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/RoutesApp/RoutesApp.tsx" afterDir="false" />
+    <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Refactoring to create a wallet">
+      <change afterPath="$PROJECT_DIR$/src/App.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Header/InfoCrypto/InfoCrypto.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Main.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/briefcaseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/briefcaseReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Chart/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Chart/Chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/DetailInformation/DetailInformation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Item/Item.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Main/Items/Items.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/Item/Item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +115,7 @@
       <workItem from="1645514169660" duration="2443000" />
       <workItem from="1645516632432" duration="173000" />
       <workItem from="1645516828990" duration="1036000" />
-      <workItem from="1645596227382" duration="4579000" />
+      <workItem from="1645596227382" duration="15183000" />
     </task>
     <task id="LOCAL-00001" summary="Rendered API">
       <created>1645476059675</created>
@@ -152,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645557480948</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactoring to create a wallet">
+      <created>1645601474335</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645601474336</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +194,8 @@
     <MESSAGE value="fix ide" />
     <MESSAGE value="Added graph, scaling" />
     <MESSAGE value="Added portal, modal window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added portal, modal window" />
+    <MESSAGE value="Refactoring to create a wallet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring to create a wallet" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="300" key="FileChooserDialogImpl" timestamp="1645598699447">
@@ -188,22 +203,22 @@
     </state>
     <state x="572" y="300" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1645598699447" />
     <state x="572" y="300" key="FileChooserDialogImpl/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1645474284862" />
-    <state width="1105" height="165" key="GridCell.Tab.0.bottom" timestamp="1645599094787">
+    <state width="919" height="165" key="GridCell.Tab.0.bottom" timestamp="1645601423499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1105" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645599094787" />
-    <state width="1105" height="165" key="GridCell.Tab.0.center" timestamp="1645599094787">
+    <state width="919" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1645601423499" />
+    <state width="919" height="165" key="GridCell.Tab.0.center" timestamp="1645601423499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1105" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645599094787" />
-    <state width="1105" height="165" key="GridCell.Tab.0.left" timestamp="1645599094786">
+    <state width="919" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1645601423499" />
+    <state width="919" height="165" key="GridCell.Tab.0.left" timestamp="1645601423499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1105" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645599094786" />
-    <state width="1105" height="165" key="GridCell.Tab.0.right" timestamp="1645599094787">
+    <state width="919" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1645601423499" />
+    <state width="919" height="165" key="GridCell.Tab.0.right" timestamp="1645601423499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1105" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645599094787" />
+    <state width="919" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1645601423499" />
     <state x="0" y="87" key="MergeDialog" timestamp="1645514483420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -226,5 +241,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="136" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645534858540" />
+    <state x="133" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1645601434341">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="133" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645601434341" />
   </component>
 </project>

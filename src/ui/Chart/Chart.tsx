@@ -5,7 +5,11 @@ import {useSelector} from "react-redux";
 import {CurrencyUnitHistory} from "../../bll/serDetailsInformation";
 import {AppRootStoreType} from "../../bll/store";
 
-export const Chart = () => {
+type ChartType = {
+    symbol?: string
+}
+
+export const Chart = (props: ChartType) => {
 
     const detailsHistory = useSelector<AppRootStoreType, Array<CurrencyUnitHistory>>(state => state.setDetailsReducer.detailsHistory)
 
@@ -14,7 +18,7 @@ export const Chart = () => {
             zoomType: 'x'
         },
         title: {
-            text: 'Cryptocurrency Chart'
+            text: props.symbol
         },
         xAxis: {
             categories: detailsHistory.map(m => m.date)

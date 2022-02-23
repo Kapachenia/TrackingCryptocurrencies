@@ -12,6 +12,6 @@ export const itemsAPI = {
         return instance.get(`/${id}`)
     },
     setDetailsHistory(id: string | undefined) {
-        return instance.get(`/${id}/history?interval=m1`)
+        return instance.get(`/${id}/history?interval=h1`)
     }
 }

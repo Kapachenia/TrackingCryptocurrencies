@@ -6,7 +6,7 @@ const instance = axios.create({
 
 export const itemsAPI = {
     setItems(offset: number) {
-        return instance.get(`?limit=${10}&offset=${offset}`)
+        return instance.get(`?limit=${100}&offset=${offset}`)
     },
     setDetailsInformation(id: string) {
         return instance.get(`/${id}`)

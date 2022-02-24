@@ -8,6 +8,7 @@ import s from "./ItemsList.module.css"
 export const ItemsList = () => {
 
     const itemCurrency = useSelector<AppRootStoreType, Array<itemType>>(state => state.setReducer.data)
+    const pageSize = useSelector<AppRootStoreType, number>(state => state.setReducer.pageSize)
 
     return (
         <table className={s.wrapper}>
@@ -18,10 +19,9 @@ export const ItemsList = () => {
                 <th>Наименование</th>
                 <th>Предложение</th>
                 <th>Доступно</th>
-                {/*<th>Купить</th>*/}
             </tr>
             </thead>
-            {itemCurrency.map(m => (<Item
+            {itemCurrency.slice(0, pageSize).map(m => (<Item
                 id={m.id}
                 key={m.id}
                 symbol={m.symbol}

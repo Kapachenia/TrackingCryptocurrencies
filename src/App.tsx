@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import './App.module.scss';
 import {RoutesApp} from "./ui/RoutesApp/RoutesApp";
 import s from "./App.module.scss";
@@ -11,15 +11,13 @@ export const App = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-      dispatch(setCurrencyTC(0))
+        dispatch(setCurrencyTC(0))
         dispatch(setInfoForHeaderTC())
     }, [])
 
     return (
         <div className={s.app__wrapper}>
-            <RoutesApp />
+            <RoutesApp/>
         </div>
     )
-
-
 }

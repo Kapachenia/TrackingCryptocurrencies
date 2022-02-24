@@ -13,6 +13,7 @@ type ItemType = {
     name: string
     marketCapUsd: string
     supply: string
+    price: string
 }
 
 export const Item = (props: ItemType) => {
@@ -49,6 +50,7 @@ export const Item = (props: ItemType) => {
                 onClose={() => setIsOpen(false)}
                 id={props.id}
                 name={props.name}
+                price={props.price}
             >
             </Modal>
 

@@ -29,6 +29,7 @@ export const ItemsList = () => {
                 name={m.name}
                 marketCapUsd={m.marketCapUsd}
                 supply={m.supply}
+                price={m.priceUsd}
             />))}
         </table>
     )

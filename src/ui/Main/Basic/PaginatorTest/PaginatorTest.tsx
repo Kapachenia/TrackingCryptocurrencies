@@ -38,8 +38,7 @@ export const PaginatorTest = () => {
             </div>
             <div>
                 {page.map((p, index) => {
-                    //@ts-ignore
-                    return <span className={currentPage === p && s.page__selected} key={index} onClick={() => selectPage(p)}>{p}</span>
+                    return <span className={currentPage === p ? s.page__selected : ''} key={index} onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
             <div>

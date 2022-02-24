@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import s from "./Modal.module.scss";
 import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
-import {setInBriefcase} from "../../bll/briefcaseReducer";
+import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/briefcaseReducer";
 
 type ModalType = {
     open: boolean
@@ -10,6 +10,7 @@ type ModalType = {
     onClose: any
     id?: string
     name?: string
+    price?: string
 }
 
 export const Modal = (props: ModalType) => {
@@ -19,10 +20,12 @@ export const Modal = (props: ModalType) => {
     const dispatch = useDispatch()
 
     if (!props.open) return null
-
+    
     const handleSubmit = () => {
         dispatch(setInBriefcase(props.id, props.name, currencyValue))
         setCurrencyValue(0)
+        dispatch(addPriceInBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
+        dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
     }
 
     return ReactDom.createPortal(
@@ -37,7 +40,7 @@ export const Modal = (props: ModalType) => {
                 </div>
                 <div className={s.wrapper__button}>
                     <button onClick={handleSubmit}>Купить</button>
-                    <button onClick={props.onClose}>Close</button>
+                    <button onClick={props.onClose}>Закрыть</button>
                 </div>
             </div>
         </div>,

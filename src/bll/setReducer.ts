@@ -5,7 +5,7 @@ const InitialState = {
     pageSize: 10,
     totalPage: 0,
     currentPage: 1,
-    // offset: 0,
+    offset: 100,
 }
 
 type InitialStateType = typeof InitialState
@@ -13,6 +13,8 @@ type InitialStateType = typeof InitialState
 
 export const setReducer = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
     switch (action.type) {
+        case "SET-OFFSET":
+            return {...state, offset: action.offset}
         case "SET-CURRENCY":
             return {...state, data: action.payload}
         case "SET-CURRENT-PAGE":
@@ -36,6 +38,10 @@ export const setTotalPage = (totalPage: any) => {
     return {type: "SET-TOTAL-PAGE", totalPage} as const
 }
 
+export const setOffset = (offset: any) => {
+    return {type: "SET-OFFSET", offset} as const
+}
+
 
 
 export const setCurrencyTC = (offset: number) => {
@@ -43,9 +49,7 @@ export const setCurrencyTC = (offset: number) => {
         itemsAPI.setItems(offset)
             .then(res => {
                 dispatch(setCurrency(res.data.data))
-                // console.log(res.data.data)
-                // debugger
-                // console.log(res.data.data.length)
+                dispatch(setOffset(offset))
                 dispatch(setTotalPage(res.data.data.length))
             })
     }
@@ -69,4 +73,5 @@ export type itemType = {
 
 type ActionType = ReturnType<typeof setCurrency> |
     ReturnType<typeof setCurrentPage> |
-    ReturnType<typeof setTotalPage>
+    ReturnType<typeof setTotalPage> |
+    ReturnType<typeof setOffset>

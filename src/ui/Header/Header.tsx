@@ -10,17 +10,15 @@ import {BriefcaseType} from "../../bll/briefcaseReducer";
 
 export const Header = () => {
 
-    const InformationUnits = useSelector<AppRootStoreType, Array<itemType>>(state => state.setReducer.data.slice(0, 3))
-
+    const infoForHeader = useSelector<AppRootStoreType, Array<itemType>>(state => state.headerInformation.infoForHeader)
     const [isOpen, setIsOpen] = useState(false)
-
     const currencyInBriefcase = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
 
     return (
         <div className={s.wrapper}>
 
             <div className={s.wrapper__info}>
-                {InformationUnits.map(m => {
+                {infoForHeader.map(m => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>

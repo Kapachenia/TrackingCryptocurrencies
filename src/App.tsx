@@ -4,6 +4,7 @@ import {RoutesApp} from "./ui/RoutesApp/RoutesApp";
 import s from "./App.module.scss";
 import {setCurrencyTC} from "./bll/setReducer";
 import {useDispatch} from "react-redux";
+import {setInfoForHeaderTC} from "./bll/setInfoForHeader";
 
 export const App = () => {
 
@@ -11,6 +12,7 @@ export const App = () => {
 
     useEffect(() => {
       dispatch(setCurrencyTC(0))
+        dispatch(setInfoForHeaderTC())
     }, [])
 
     return (

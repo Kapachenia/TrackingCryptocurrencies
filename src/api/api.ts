@@ -13,5 +13,8 @@ export const itemsAPI = {
     },
     setDetailsHistory(id: string | undefined) {
         return instance.get(`/${id}/history?interval=h1`)
-    }
+    },
+    setInfoForHeader() {
+        return instance.get(`?limit=${3}&offset=${0}`)
+    },
 }

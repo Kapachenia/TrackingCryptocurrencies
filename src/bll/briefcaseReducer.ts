@@ -1,9 +1,8 @@
 
 const InitialState = {
     currencyInBriefcase: [
-        {id : 'awd', name: 'awd', count: 'awd'}
+        {} as { id : string, name: string, count: string}
     ]
-    // currencyInBriefcase: [] as { id : any, name: any, count: any}
 }
 
 type InitialStateType = typeof InitialState

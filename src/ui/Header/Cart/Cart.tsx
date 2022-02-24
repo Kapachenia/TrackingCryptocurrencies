@@ -33,7 +33,6 @@ export const Cart = (props: ModalType) => {
                 <button onClick={props.onClose}>Close</button>
             </div>
         </div>,
-        // @ts-ignore
-        document.getElementById('cart')
+        document.getElementById('cart') as HTMLElement
     )
 }

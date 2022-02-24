@@ -44,6 +44,8 @@ export const setOffset = (offset: any) => {
 
 
 
+
+
 export const setCurrencyTC = (offset: number) => {
     return (dispatch: any) => {
         itemsAPI.setItems(offset)
@@ -54,7 +56,6 @@ export const setCurrencyTC = (offset: number) => {
             })
     }
 }
-
 
 export type itemType = {
     id: string,

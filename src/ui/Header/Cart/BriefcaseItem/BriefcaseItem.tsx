@@ -22,7 +22,9 @@ export const BriefcaseItem = (props: BriefcaseItemType) => {
                 {props.count}
             </div>
             <div>
-                <button onClick={() => dispatch(deleteCurrency(props.id))}>x</button>
+                {
+                    props.id && <button onClick={() => dispatch(deleteCurrency(props.id))}>x</button>
+                }
             </div>
         </div>
     )

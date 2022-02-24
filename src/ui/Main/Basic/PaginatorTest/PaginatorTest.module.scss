@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+}
+
+.page__selected {
+  font-weight: bold;
+}
+
+span {
+  padding: 3px;
+  cursor: pointer;
+}

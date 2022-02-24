@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setCurrencyTC, setCurrentPage} from "../../../../bll/setReducer";
 import {AppRootStoreType} from "../../../../bll/store";
+import s from "./PaginatorTest.module.scss"
 
 export const PaginatorTest = () => {
 
@@ -9,48 +10,43 @@ export const PaginatorTest = () => {
 
     const currentPage = useSelector<AppRootStoreType, number>(state => state.setReducer.currentPage)
 
-    // const [currentPage, setCurrentPage] = useState(0)
 
     let page = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-
-    // useEffect(() => {
-
-    // }, [currentPage])
-
-    const selectPage = (p: number) => {
+    const selectPage = (p: any) => {
         dispatch(setCurrentPage(p))
-        p == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(p * 10))
-
-        console.log(`currentPage: ${currentPage}`)
-        console.log(`p: ${p}`)
-
+        dispatch(setCurrencyTC((p - 1) * 10))
     }
 
-    const SelectPrevPage = (p: number) => {
-        // setCurrentPage(p)
-        // currentPage == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(currentPage * 10))
+    const selectPrevPage = () => {
+        dispatch(setCurrencyTC(currentPage * 10 - 20))
+        dispatch(setCurrentPage(currentPage - 1))
     }
 
-    const SelectNextPage = () => {
-        // dispatch(setCurrentPage(p))
-        dispatch(setCurrencyTC(currentPage + 1))
-        // setCurrentPage(p)
-        // currentPage == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(currentPage * 10))
+    const selectNextPage = () => {
+        dispatch(setCurrencyTC(currentPage * 10))
+        dispatch(setCurrentPage(currentPage + 1))
     }
 
     return (
-        <div>
+        <div className={s.pagination}>
             <div>
-                <button>prev</button>
+                {
+                    currentPage > 1 &&
+                    <button onClick={selectPrevPage}>prev</button>
+                }
             </div>
             <div>
-                {page.map(p => {
-                    return <span onClick={() => selectPage(p)}>{p}</span>
+                {page.map((p, index) => {
+                    //@ts-ignore
+                    return <span className={currentPage === p && s.page__selected} key={index} onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
             <div>
-                <button onClick={() => SelectNextPage}>next</button>
+                {
+                    currentPage < 10 &&
+                    <button onClick={selectNextPage}>next</button>
+                }
             </div>
         </div>
     )

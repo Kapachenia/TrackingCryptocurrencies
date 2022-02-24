@@ -41,7 +41,6 @@ export const Modal = (props: ModalType) => {
                 </div>
             </div>
         </div>,
-        // @ts-ignore
-        document.getElementById('portal')
+        document.getElementById('portal') as HTMLElement
     )
 }

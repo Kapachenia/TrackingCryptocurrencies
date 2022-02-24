@@ -43,9 +43,9 @@ export const setCurrencyTC = (offset: number) => {
         itemsAPI.setItems(offset)
             .then(res => {
                 dispatch(setCurrency(res.data.data))
-                console.log(res.data.data)
+                // console.log(res.data.data)
                 // debugger
-                console.log(res.data.data.length)
+                // console.log(res.data.data.length)
                 dispatch(setTotalPage(res.data.data.length))
             })
     }

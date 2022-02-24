@@ -18,39 +18,48 @@ export const PaginatorTest = () => {
 
     // }, [currentPage])
 
-    const selectPage = (p: number) => {
+    const selectPage = (p: any) => {
+        // setCurrentPage(p)
         dispatch(setCurrentPage(p))
-        p == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(p * 10))
+        dispatch(setCurrencyTC((p - 1) * 10))
+        // console.log(p)
+        // console.log(currentPage)
 
-        console.log(`currentPage: ${currentPage}`)
-        console.log(`p: ${p}`)
 
+    //     dispatch(setCurrentPage(p))
+    //     p == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(p * 10))
     }
 
-    const SelectPrevPage = (p: number) => {
-        // setCurrentPage(p)
-        // currentPage == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(currentPage * 10))
+    const SelectPrevPage = () => {
+        dispatch(setCurrencyTC(currentPage * 10 - 20))
+        dispatch(setCurrentPage(currentPage - 1))
     }
 
     const SelectNextPage = () => {
-        // dispatch(setCurrentPage(p))
-        dispatch(setCurrencyTC(currentPage + 1))
-        // setCurrentPage(p)
-        // currentPage == 1 ? dispatch(setCurrencyTC(0)) : dispatch(setCurrencyTC(currentPage * 10))
+        dispatch(setCurrencyTC(currentPage * 10))
+        dispatch(setCurrentPage(currentPage + 1))
+        // dispatch(setCurrencyTC(currentPage + 9))
+        // dispatch(setCurrentPage(currentPage + 10))
     }
 
     return (
         <div>
             <div>
-                <button>prev</button>
+                {
+                    currentPage > 1 &&
+                    <button onClick={SelectPrevPage}>prev</button>
+                }
             </div>
             <div>
-                {page.map(p => {
-                    return <span onClick={() => selectPage(p)}>{p}</span>
+                {page.map((p, index) => {
+                    return <span key={index} onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
             <div>
-                <button onClick={() => SelectNextPage}>next</button>
+                {
+                    currentPage < 10 &&
+                    <button onClick={SelectNextPage}>next</button>
+                }
             </div>
         </div>
     )

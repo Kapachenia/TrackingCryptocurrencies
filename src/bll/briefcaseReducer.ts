@@ -1,16 +1,9 @@
 
 const InitialState = {
     currencyInBriefcase: [
-        {id: 'awdaw', name: 'bitcoin', count: '10'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
-        {id: 'aawdwdaw', name: 'adawdwa', count: '12'},
+        {id : 'awd', name: 'awd', count: 'awd'}
     ]
+    // currencyInBriefcase: [] as { id : any, name: any, count: any}
 }
 
 type InitialStateType = typeof InitialState

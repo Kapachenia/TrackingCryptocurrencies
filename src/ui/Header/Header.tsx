@@ -6,7 +6,7 @@ import {AppRootStoreType} from "../../bll/store";
 import {itemType} from "../../bll/setReducer";
 import img from "../../asset/cart.png";
 import {Cart} from "./Cart/Cart";
-import {BriefcaseType} from "../../bll/briefcaseReducer";
+import {BriefcaseType} from "../../bll/setBriefcase";
 
 export const Header = () => {
 
@@ -15,11 +15,21 @@ export const Header = () => {
     const currencyInBriefcase = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
     const priceBriefcase = useSelector<AppRootStoreType, string | number>(state => state.briefcase.priceBriefcase)
     const oldPriceBriefcase = useSelector<AppRootStoreType, Array<number>>(state => state.briefcase.oldPriceBriefcase)
+    const TotalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
 
     const index = oldPriceBriefcase.length - 2
     const index2 = oldPriceBriefcase.length - 1
 
     const result = (Number(priceBriefcase) - oldPriceBriefcase[index]) / Number(priceBriefcase) * 100
+
+    let totalBriefcase = TotalBriefcaseFromLocalStorage.map(m => m.price)
+    console.log(totalBriefcase.shift())
+    console.log(totalBriefcase)
+
+    // let result2 = totalBriefcase.reduce(
+    //         (previousValue: any, currentValue: any) => previousValue + currentValue)
+
+
 
     return (
         <div className={s.wrapper}>
@@ -32,7 +42,7 @@ export const Header = () => {
                 <span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>
                 <span className={s.addInCart}>+ {oldPriceBriefcase[index2]}</span>
                 <span>
-                    {priceBriefcase} USD
+                    {4354} USD
                 </span>
             </div>
             <div>

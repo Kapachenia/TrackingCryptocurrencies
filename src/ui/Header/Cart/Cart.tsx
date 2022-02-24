@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Cart.module.scss";
 import ReactDom from 'react-dom';
-import {BriefcaseType} from "../../../bll/briefcaseReducer";
+import {BriefcaseType} from "../../../bll/setBriefcase";
 import {BriefcaseItem} from "./BriefcaseItem/BriefcaseItem";
 
 type ModalType = {
@@ -22,6 +22,7 @@ export const Cart = (props: ModalType) => {
                 <div>{props.children}</div>
 
                 <div>
+
                     {props.currencyInBriefcase.map(m => {
                         return <BriefcaseItem
                             key={m.id}

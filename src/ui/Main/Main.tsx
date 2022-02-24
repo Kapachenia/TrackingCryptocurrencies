@@ -8,7 +8,6 @@ export const Main = () => {
         <div className={s.wrapper}>
             <Header />
             <Basic />
-            {/*<Briefcase />*/}
         </div>
     )
 }

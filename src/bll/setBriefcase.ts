@@ -1,6 +1,6 @@
 const InitialState = {
     currencyInBriefcase: [
-        {} as { id: string, name: string, count: string }
+        {} as { id: string, name: string, count: string, price: string}
     ],
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
@@ -8,15 +8,16 @@ const InitialState = {
 
 type InitialStateType = typeof InitialState
 
-
-export const briefcaseReducer = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
+export const setBriefcase = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
     switch (action.type) {
-        case "SET-OLD-PRICE-BRIEFCASA":
+        case "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE":
+            return {...state, currencyInBriefcase: action.payload}
+        case "SET-OLD-PRICE-BRIEFCASE":
             return {...state, oldPriceBriefcase: [...state.oldPriceBriefcase, action.oldPrice]}
         case "ADD-PRICE-IN-CURRENCY":
             return {...state, priceBriefcase: action.price + state.priceBriefcase}
         case "SET-IN-BRIEFCASE":
-            const newObject = {id: action.id, name: action.name, count: action.count}
+            const newObject = {id: action.id, name: action.name, count: action.count, price: action.price}
             return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
         case "DELETE-CURRENCY":
             return {...state, currencyInBriefcase: [...state.currencyInBriefcase].filter(f => f.id !== action.id)}
@@ -25,8 +26,8 @@ export const briefcaseReducer = (state: InitialStateType = InitialState, action:
     }
 }
 
-export const setInBriefcase = (id?: any, name?: any, count?: any) => {
-    return {type: "SET-IN-BRIEFCASE", id, name, count} as const
+export const setInBriefcase = (id?: any, name?: any, count?: any, price?: any) => {
+    return {type: "SET-IN-BRIEFCASE", id, name, count, price} as const
 }
 
 export const deleteCurrency = (id: string) => {
@@ -38,20 +39,22 @@ export const addPriceInBriefcase = (price: any) => {
 }
 
 export const setOldPriceBriefcase = (oldPrice: number) => {
-    return {type: "SET-OLD-PRICE-BRIEFCASA", oldPrice} as const
+    return {type: "SET-OLD-PRICE-BRIEFCASE", oldPrice} as const
 }
 
-export type currencyInBriefcaseType = {
-    currencyInBriefcase: Array<BriefcaseType>
+export const setInBriefcaseFromLocalStorage = (payload: any) => {
+    return {type: "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE", payload} as const
 }
 
 export type BriefcaseType = {
     id: string
     name: string
     count: string
+    price: string
 }
 
 type ActionType = ReturnType<typeof setInBriefcase> |
     ReturnType<typeof deleteCurrency> |
     ReturnType<typeof addPriceInBriefcase> |
-    ReturnType<typeof setOldPriceBriefcase>
+    ReturnType<typeof setOldPriceBriefcase> |
+    ReturnType<typeof setInBriefcaseFromLocalStorage>

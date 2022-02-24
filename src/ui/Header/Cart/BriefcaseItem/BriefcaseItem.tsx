@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./BriefcaseItem.module.scss"
 import {useDispatch} from "react-redux";
-import {deleteCurrency} from "../../../../bll/briefcaseReducer";
+import {deleteCurrency} from "../../../../bll/setBriefcase";
 
 type BriefcaseItemType = {
     id: string

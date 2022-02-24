@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import s from "./Modal.module.scss";
 import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
-import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/briefcaseReducer";
+import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/setBriefcase";
 
 type ModalType = {
     open: boolean
@@ -20,9 +20,9 @@ export const Modal = (props: ModalType) => {
     const dispatch = useDispatch()
 
     if (!props.open) return null
-    
+
     const handleSubmit = () => {
-        dispatch(setInBriefcase(props.id, props.name, currencyValue))
+        dispatch(setInBriefcase(props.id, props.name, currencyValue, props.price))
         setCurrencyValue(0)
         dispatch(addPriceInBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
         dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))

@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ec4298f-944b-49e8-b0fb-d71ea4b0af59" name="Default Changelist" comment="Rewritten in SCSS">
+      <change afterPath="$PROJECT_DIR$/src/ui/Main/Basic/PaginatorTest/PaginatorTest.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
@@ -39,6 +40,12 @@
       <change beforePath="$PROJECT_DIR$/src/ui/Main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Main.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bll/setReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/bll/setReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Basic.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/ItemsList/ItemsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main/Basic/Pagination/Pagination.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="D:\Front-end\it-inc\test\TrackingCryptocurrencies\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\it-inc\test\TrackingCryptocurrencies\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -94,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
@@ -282,9 +290,10 @@
     </state>
     <state x="761" y="308" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645514494369" />
     <state x="2681" y="315" key="git4idea.merge.GitMergeDialog/1920.7.1920.1040/0.0.1920.1040@1920.7.1920.1040" timestamp="1645476076715" />
-    <state x="136" y="244" key="run.anything.popup" timestamp="1645534858540">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1784" y="14" width="672" height="677" key="run.anything.popup" timestamp="1645682843506">
+      <screen x="-1920" y="-230" width="1920" height="1040" />
     </state>
+    <state x="-1784" y="14" width="672" height="677" key="run.anything.popup/0.0.1366.728/-1920.-230.1920.1040@-1920.-230.1920.1040" timestamp="1645682843506" />
     <state x="136" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645534858540" />
     <state x="133" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1645601434341">
       <screen x="0" y="0" width="1920" height="1040" />

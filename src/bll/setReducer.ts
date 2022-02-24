@@ -3,7 +3,7 @@ import { itemsAPI } from "../api/api"
 const InitialState = {
     data: [],
     pageSize: 10,
-    totalPage: 100,
+    totalPage: 0,
     currentPage: 1,
     // offset: 0,
 }
@@ -46,7 +46,7 @@ export const setCurrencyTC = (offset: number) => {
                 console.log(res.data.data)
                 // debugger
                 console.log(res.data.data.length)
-                // dispatch(setTotalPage(res.data.data.length))
+                dispatch(setTotalPage(res.data.data.length))
             })
     }
 }

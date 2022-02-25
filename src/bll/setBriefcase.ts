@@ -1,6 +1,6 @@
 const InitialState = {
     currencyInBriefcase: [
-        {} as { id: string, name: string, count: string, price: string}
+        {} as { id: string, name: string, count: string, price: string }
     ],
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
@@ -19,14 +19,17 @@ export const setBriefcase = (state: InitialStateType = InitialState, action: Act
         case "SET-IN-BRIEFCASE":
 
 
-
             const newObject = {id: action.id, name: action.name, count: action.count, price: action.price}
 
-            // const newArray = state.currencyInBriefcase.find(f => f.id == action.id)
-
             let test = state.currencyInBriefcase.find(f => f.id == action.id)
-
-            return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
+            if (test) {
+                return {
+                    ...state, currencyInBriefcase: state.currencyInBriefcase
+                        .map(m => m.id === action.id ? {...m, count: m.count + action.count} : m)
+                }
+            } else {
+                return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
+            }
 
         case "DELETE-CURRENCY":
             return {...state, currencyInBriefcase: [...state.currencyInBriefcase].filter(f => f.id !== action.id)}

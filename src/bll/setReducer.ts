@@ -1,9 +1,10 @@
-import { itemsAPI } from "../api/api"
+import {itemsAPI} from "../api/api"
+import {Dispatch} from "react";
 
 const InitialState = {
     data: [],
     pageSize: 10,
-    totalPage: 0,
+    totalPage: 10,
     currentPage: 1,
     offset: 100,
 }
@@ -11,7 +12,7 @@ const InitialState = {
 type InitialStateType = typeof InitialState
 
 
-export const setReducer = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
+export const setReducer = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET-OFFSET":
             return {...state, offset: action.offset}
@@ -30,15 +31,15 @@ export const setCurrency = (payload: any) => {
     return {type: "SET-CURRENCY", payload} as const
 }
 
-export const setCurrentPage = (currentPage: any) => {
+export const setCurrentPage = (currentPage: number) => {
     return {type: "SET-CURRENT-PAGE", currentPage} as const
 }
 
-export const setTotalPage = (totalPage: any) => {
+export const setTotalPage = (totalPage: number) => {
     return {type: "SET-TOTAL-PAGE", totalPage} as const
 }
 
-export const setOffset = (offset: any) => {
+export const setOffset = (offset: number) => {
     return {type: "SET-OFFSET", offset} as const
 }
 
@@ -47,32 +48,16 @@ export const setOffset = (offset: any) => {
 
 
 export const setCurrencyTC = (offset: number) => {
-    return (dispatch: any) => {
+    return (dispatch: Dispatch<ActionsType>) => {
         itemsAPI.setItems(offset)
             .then(res => {
                 dispatch(setCurrency(res.data.data))
                 dispatch(setOffset(offset))
-                dispatch(setTotalPage(res.data.data.length))
             })
     }
 }
 
-export type itemType = {
-    id: string,
-    rank: string,
-    symbol: string,
-    name: string,
-    supply: string,
-    maxSupply: string,
-    marketCapUsd: string,
-    volumeUsd24Hr: string,
-    priceUsd: string,
-    changePercent24Hr: string,
-    vwap24Hr: string,
-    explorer: string,
-}
-
-type ActionType = ReturnType<typeof setCurrency> |
+type ActionsType = ReturnType<typeof setCurrency> |
     ReturnType<typeof setCurrentPage> |
     ReturnType<typeof setTotalPage> |
     ReturnType<typeof setOffset>

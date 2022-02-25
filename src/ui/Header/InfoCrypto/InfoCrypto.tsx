@@ -12,25 +12,18 @@ type InfoCryptoType = {
 export const InfoCrypto = (props: InfoCryptoType) => {
 
     const dispatch = useDispatch()
-
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     const clickHandler = () => {
         dispatch(setDetailsTC(props.name.toLowerCase()))
-
         dispatch(setHistoryTC(props.name.toLowerCase()))
         navigate("/detailInformation")
-
-        // console.log(props.name)
     }
 
     return (
         <div className={s.wrapper}>
-            {/*name*/}
             <span className={s.item} onClick={clickHandler}>{props.name}</span>
-            {/*maxSupply*/}
             <span>price</span>
-            {/*priceUsd*/}
             <span>{Math.floor(+props.priceUsd)}$</span>
         </div>
     )

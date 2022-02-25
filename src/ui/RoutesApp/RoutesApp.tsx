@@ -7,13 +7,9 @@ export const RoutesApp = () => {
 
     return (
         <div className="App">
-
-
-
             <Routes>
                 <Route path={'/'} element={<Main/>}/>
-                {/*<Route path={'/briefcase'} element={<Briefcase/>}/>*/}
-                <Route path={'/detailInformation'} element={<DetailInformation />}/>
+                <Route path={'/detailInformation'} element={<DetailInformation/>}/>
             </Routes>
 
         </div>

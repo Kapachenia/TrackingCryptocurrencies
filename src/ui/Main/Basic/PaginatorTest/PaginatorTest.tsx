@@ -6,14 +6,19 @@ import s from "./PaginatorTest.module.scss"
 
 export const PaginatorTest = () => {
 
+    const currentPage = useSelector<AppRootStoreType, number>(state => state.setReducer.currentPage)
+    const totalPage = useSelector<AppRootStoreType, number>(state => state.setReducer.totalPage)
     const dispatch = useDispatch()
 
-    const currentPage = useSelector<AppRootStoreType, number>(state => state.setReducer.currentPage)
+    const toArray = () => {
+        let arr = []
+        for (let i = 0; i < totalPage; i++) {
+            arr[i] = i
+        }
+        return arr
+    }
 
-
-    let page = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    const selectPage = (p: any) => {
+    const selectPage = (p: number) => {
         dispatch(setCurrentPage(p))
         dispatch(setCurrencyTC((p - 1) * 10))
     }
@@ -37,8 +42,9 @@ export const PaginatorTest = () => {
                 }
             </div>
             <div>
-                {page.map((p, index) => {
-                    return <span className={currentPage === p ? s.page__selected : ''} key={index} onClick={() => selectPage(p)}>{p}</span>
+                {toArray().map((p, index) => {
+                    return <span className={currentPage === p ? s.page__selected : ''} key={index}
+                                 onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
             <div>

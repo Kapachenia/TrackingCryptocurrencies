@@ -1,14 +1,15 @@
-import {itemsAPI} from "../api/api"
+import {DetailsHistoryType, itemsAPI, ItemsType} from "../api/api"
+import {Dispatch} from "react";
 
 const InitialState = {
-    detailsInformation: {},
-    detailsHistory: []
+    detailsInformation: {} as ItemsType,
+    detailsHistory: [] as Array<DetailsHistoryType>
 }
 
 type InitialStateType = typeof InitialState
 
 
-export const serDetailsInformation = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
+export const serDetailsInformation = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET-DETAILS-HISTORY":
             return {...state, detailsHistory: action.detailsHistory}
@@ -19,27 +20,26 @@ export const serDetailsInformation = (state: InitialStateType = InitialState, ac
     }
 }
 
-export const setCurrency = (currency: any) => {
+export const setCurrency = (currency: ItemsType) => {
     return {type: "SET-DETAILS-INFORMATION", currency} as const
 }
 
-export const setDetailsHistory = (detailsHistory: any) => {
+export const setDetailsHistory = (detailsHistory: Array<DetailsHistoryType>) => {
     return {type: "SET-DETAILS-HISTORY", detailsHistory} as const
 }
 
 
 export const setDetailsTC = (id: string) => {
-    return (dispatch: any) => {
+    return (dispatch: Dispatch<ActionsType>) => {
         itemsAPI.setDetailsInformation(id)
             .then(res => {
-                // console.log(res.data.data)
                 dispatch(setCurrency(res.data.data))
             })
     }
 }
 
 export const setHistoryTC = (id: string) => {
-    return (dispatch: any) => {
+    return (dispatch: Dispatch<ActionsType>) => {
             itemsAPI.setDetailsHistory(id)
                 .then(res => {
                     dispatch(setDetailsHistory(res.data.data))
@@ -47,27 +47,5 @@ export const setHistoryTC = (id: string) => {
     }
 }
 
-
-export type CurrencyUnit = {
-    "id"?: string
-    "rank"?: string
-    "symbol"?: string
-    "name"?: string
-    "supply"?: string
-    "maxSupply"?: string
-    "marketCapUsd"?: string
-    "volumeUsd24Hr"?: string
-    "priceUsd"?: string
-    "changePercent24Hr"?: string
-    "vwap24Hr"?: string
-}
-
-export type CurrencyUnitHistory = {
-    circulatingSupply: string
-    date: string
-    priceUsd: string
-    time: number
-}
-
-type ActionType = ReturnType<typeof setCurrency> |
+type ActionsType = ReturnType<typeof setCurrency> |
     ReturnType<typeof setDetailsHistory>

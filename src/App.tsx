@@ -5,9 +5,7 @@ import s from "./App.module.scss";
 import {setCurrencyTC} from "./bll/setReducer";
 import {useDispatch} from "react-redux";
 import {setInfoForHeaderTC} from "./bll/setInfoForHeader";
-import {
-    priceBriefcaseFromLocalStorage,
-} from "./bll/setBriefcase";
+import {priceBriefcaseFromLocalStorage} from "./bll/setBriefcase";
 
 export const App = () => {
 
@@ -21,7 +19,6 @@ export const App = () => {
         if (parseForBriefcase.length > 1) {
             dispatch(priceBriefcaseFromLocalStorage(parseForBriefcase))
         }
-
     }, [])
 
     return (

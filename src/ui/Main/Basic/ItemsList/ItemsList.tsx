@@ -2,12 +2,12 @@ import {Item} from "./Item/Item";
 import React from "react";
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
-import {itemType} from "../../../../bll/setReducer";
 import s from "./ItemsList.module.scss"
+import { ItemsType } from "../../../../api/api";
 
 export const ItemsList = () => {
 
-    const itemCurrency = useSelector<AppRootStoreType, Array<itemType>>(state => state.setReducer.data)
+    const itemCurrency = useSelector<AppRootStoreType, Array<ItemsType>>(state => state.setReducer.data)
     const pageSize = useSelector<AppRootStoreType, number>(state => state.setReducer.pageSize)
 
     return (

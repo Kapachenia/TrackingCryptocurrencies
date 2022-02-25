@@ -1,17 +1,17 @@
 import React from "react";
 import s from "./Cart.module.scss";
 import ReactDom from 'react-dom';
-import {BriefcaseType} from "../../../bll/setBriefcase";
 import {BriefcaseItem} from "./BriefcaseItem/BriefcaseItem";
+import {CurrencyInBriefcaseType} from "../../../bll/setBriefcase";
 
-type ModalType = {
+type CartType = {
     open: boolean
     children?: React.ReactNode
     onClose: any
-    currencyInBriefcase: Array<BriefcaseType>
+    currencyInBriefcase: Array<CurrencyInBriefcaseType>
 }
 
-export const Cart = (props: ModalType) => {
+export const Cart = (props: CartType) => {
 
     if (!props.open) return null
 

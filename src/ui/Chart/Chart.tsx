@@ -2,16 +2,16 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import {useSelector} from "react-redux";
-import {CurrencyUnitHistory} from "../../bll/serDetailsInformation";
 import {AppRootStoreType} from "../../bll/store";
+import {DetailsHistoryType} from "../../api/api";
 
 type ChartType = {
-    symbol?: string
+    symbol: string
 }
 
 export const Chart = (props: ChartType) => {
 
-    const detailsHistory = useSelector<AppRootStoreType, Array<CurrencyUnitHistory>>(state => state.setDetailsReducer.detailsHistory)
+    const detailsHistory = useSelector<AppRootStoreType, Array<DetailsHistoryType>>(state => state.setDetailsReducer.detailsHistory)
 
     const options = {
         chart: {
@@ -22,13 +22,13 @@ export const Chart = (props: ChartType) => {
         },
         xAxis: {
             categories: detailsHistory.map(m => m.date)
-
-
         },
         series: [
             {
                 name: 'Cost $',
-                 data: detailsHistory.map((el) => {return Math.floor(+el.priceUsd)})
+                data: detailsHistory.map(el => {
+                    return Math.floor(+el.priceUsd)
+                })
             }
         ]
     };

@@ -1,4 +1,5 @@
 import {itemsAPI} from "../api/api";
+import {Dispatch} from "react";
 
 const InitialState = {
     infoForHeader: []
@@ -7,7 +8,7 @@ const InitialState = {
 type InitialStateType = typeof InitialState
 
 
-export const setInfoForHeader = (state: InitialStateType = InitialState, action: ActionType): InitialStateType => {
+export const setInfoForHeader = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET-INFO-FOR-HEADER":
         return {...state, infoForHeader: action.currency}
@@ -21,7 +22,7 @@ export const setInfoForHeaderAC = (currency: any) => {
 }
 
 export const setInfoForHeaderTC = () => {
-    return (dispatch: any) => {
+    return (dispatch: Dispatch<ActionsType>) => {
         itemsAPI.setInfoForHeader()
             .then(res => {
                 dispatch(setInfoForHeaderAC(res.data.data))
@@ -29,4 +30,4 @@ export const setInfoForHeaderTC = () => {
     }
 }
 
-type ActionType = ReturnType<typeof setInfoForHeaderAC>
+type ActionsType = ReturnType<typeof setInfoForHeaderAC>

@@ -16,25 +16,16 @@ type ModalType = {
 export const Modal = (props: ModalType) => {
 
     const [currencyValue, setCurrencyValue] = useState(0)
-
     const dispatch = useDispatch()
 
     if (!props.open) return null
 
     const handleSubmit = () => {
-
         dispatch(setInBriefcase(props.id, props.name, currencyValue, props.price))
         setCurrencyValue(0)
         dispatch(addPriceInBriefcase(currencyValue * Number(props.price)))
-        dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
+        dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price)) * 1000) / 1000 * currencyValue))
     }
-
-    // const uniqueItems = Array.from(new Set(items.map(a => a.id)))
-    //     .map(id => {
-    //         return items.find(a => a.id === id)
-    //     })
-
-
 
     return ReactDom.createPortal(
         <div className={s.wrapperPortal}>
@@ -44,7 +35,7 @@ export const Modal = (props: ModalType) => {
                 <div>{props.children}</div>
                 <div>
                     <div className={s.value}><input type="number" value={currencyValue}
-                                                      onChange={(e) => setCurrencyValue(Number(e.target.value))}/></div>
+                                                    onChange={(e) => setCurrencyValue(Number(e.target.value))}/></div>
                 </div>
                 <div className={s.wrapper__button}>
                     <button onClick={handleSubmit}>Купить</button>

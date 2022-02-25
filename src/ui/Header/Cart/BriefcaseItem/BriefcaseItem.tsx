@@ -4,9 +4,9 @@ import {useDispatch} from "react-redux";
 import {deleteCurrency} from "../../../../bll/setBriefcase";
 
 type BriefcaseItemType = {
-    id: string
-    name: string
-    count: string
+    id?: string
+    name?: string
+    count?: string
 }
 
 export const BriefcaseItem = (props: BriefcaseItemType) => {

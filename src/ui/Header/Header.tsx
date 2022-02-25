@@ -3,25 +3,23 @@ import {InfoCrypto} from "./InfoCrypto/InfoCrypto";
 import s from "./Header.module.scss"
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
-import {itemType} from "../../bll/setReducer";
 import img from "../../asset/cart.png";
 import {Cart} from "./Cart/Cart";
-import {BriefcaseType} from "../../bll/setBriefcase";
+import {CurrencyInBriefcaseType} from "../../bll/setBriefcase";
+import {ItemsType} from "../../api/api";
 
 export const Header = () => {
 
-    const infoForHeader = useSelector<AppRootStoreType, Array<itemType>>(state => state.headerInformation.infoForHeader)
     const [isOpen, setIsOpen] = useState(false)
-    const currencyInBriefcase = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
-    const priceBriefcase = useSelector<AppRootStoreType, string | number>(state => state.briefcase.priceBriefcase)
+    const infoForHeader = useSelector<AppRootStoreType, Array<ItemsType>>(state => state.headerInformation.infoForHeader)
+    const currencyInBriefcase = useSelector<AppRootStoreType, Array<CurrencyInBriefcaseType>>(state => state.briefcase.currencyInBriefcase)
+    const priceBriefcase = useSelector<AppRootStoreType, number>(state => state.briefcase.priceBriefcase)
     const oldPriceBriefcase = useSelector<AppRootStoreType, Array<number>>(state => state.briefcase.oldPriceBriefcase)
-    const TotalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
+    const TotalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<CurrencyInBriefcaseType>>(state => state.briefcase.currencyInBriefcase)
 
-    const index = oldPriceBriefcase.length - 2
+    const index1 = oldPriceBriefcase.length - 2
     const index2 = oldPriceBriefcase.length - 1
-
-    const result = (Number(priceBriefcase) - oldPriceBriefcase[index]) / Number(priceBriefcase) * 100
-
+    const result = (Number(priceBriefcase) - oldPriceBriefcase[index1]) / Number(priceBriefcase) * 100
 
     let reductionToNumber = Math.ceil((
         TotalBriefcaseFromLocalStorage
@@ -38,12 +36,9 @@ export const Header = () => {
                 })}
             </div>
             <div className={s.cart} onClick={() => setIsOpen(true)}><img src={img} alt="cart"/>
-                {/*<span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>*/}
                 <span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>
                 <span className={s.addInCart}>+ {
-
                     reductionToNumber == 0 ? '0' : (oldPriceBriefcase[index2]).toFixed(2)
-
                 } USD</span>
                 <span>
                     {Number(priceBriefcase).toFixed(2)} USD
@@ -56,7 +51,6 @@ export const Header = () => {
                 >
                 </Cart>
             </div>
-
             {/*<NavLink to={'/'}>Main</NavLink>*/}
             {/*<NavLink to={'/briefcase'}>Briefcase</NavLink>*/}
             {/*<NavLink to={'/detailInformation'}>DetailInformation</NavLink>*/}

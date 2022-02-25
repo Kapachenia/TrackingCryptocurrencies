@@ -1,21 +1,21 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
-import {CurrencyUnit} from "../../bll/serDetailsInformation";
 import {Chart} from "../Chart/Chart";
 import s from "./DetailInformation.module.scss"
 import {Modal} from "../Modal/Modal";
 import {useNavigate} from "react-router-dom";
 import {setCurrencyTC} from "../../bll/setReducer";
+import {ItemsType} from "../../api/api";
 
 export const DetailInformation = () => {
 
     const dispatch = useDispatch()
 
-    const detailsInformation = useSelector<AppRootStoreType, CurrencyUnit>(state => state.setDetailsReducer.detailsInformation)
+    const detailsInformation = useSelector<AppRootStoreType, ItemsType>(state => state.setDetailsReducer.detailsInformation)
 
-    const toFloor = (num: any) => {
-        if (num) return Math.floor(num)
+    const toFloor = (num: string) => {
+        if (num) return Math.floor(Number(num))
     }
 
     const [isOpen, setIsOpen] = useState(false)

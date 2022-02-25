@@ -17,8 +17,17 @@ export const setBriefcase = (state: InitialStateType = InitialState, action: Act
         case "ADD-PRICE-IN-CURRENCY":
             return {...state, priceBriefcase: action.price + state.priceBriefcase}
         case "SET-IN-BRIEFCASE":
+
+
+
             const newObject = {id: action.id, name: action.name, count: action.count, price: action.price}
+
+            // const newArray = state.currencyInBriefcase.find(f => f.id == action.id)
+
+            let test = state.currencyInBriefcase.find(f => f.id == action.id)
+
             return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
+
         case "DELETE-CURRENCY":
             return {...state, currencyInBriefcase: [...state.currencyInBriefcase].filter(f => f.id !== action.id)}
         default:

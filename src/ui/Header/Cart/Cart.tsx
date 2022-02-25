@@ -20,9 +20,7 @@ export const Cart = (props: ModalType) => {
             <div className={s.overlay_style}/>
             <div className={s.modal_styles}>
                 <div>{props.children}</div>
-
                 <div>
-
                     {props.currencyInBriefcase.map((m, index) => {
                         return <BriefcaseItem
                             key={index}

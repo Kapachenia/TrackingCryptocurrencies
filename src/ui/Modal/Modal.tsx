@@ -22,12 +22,17 @@ export const Modal = (props: ModalType) => {
     if (!props.open) return null
 
     const handleSubmit = () => {
+
         dispatch(setInBriefcase(props.id, props.name, currencyValue, props.price))
         setCurrencyValue(0)
-        // dispatch(addPriceInBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
         dispatch(addPriceInBriefcase(currencyValue * Number(props.price)))
         dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
     }
+
+    // const uniqueItems = Array.from(new Set(items.map(a => a.id)))
+    //     .map(id => {
+    //         return items.find(a => a.id === id)
+    //     })
 
 
 

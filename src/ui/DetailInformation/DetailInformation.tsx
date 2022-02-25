@@ -45,7 +45,9 @@ export const DetailInformation = () => {
                 <div>
                     <Modal open={isOpen}
                            onClose={() => setIsOpen(false)}
+                           id={detailsInformation.id}
                            name={detailsInformation.name}
+                           price={detailsInformation.priceUsd}
                     >
                     </Modal>
                 </div>

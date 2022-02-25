@@ -22,14 +22,13 @@ export const Header = () => {
 
     const result = (Number(priceBriefcase) - oldPriceBriefcase[index]) / Number(priceBriefcase) * 100
 
-    let totalBriefcase = TotalBriefcaseFromLocalStorage.map(m => m.price)
-    console.log(totalBriefcase.shift())
-    console.log(totalBriefcase)
 
-    // let result2 = totalBriefcase.reduce(
-    //         (previousValue: any, currentValue: any) => previousValue + currentValue)
-
-
+    let reductionToNumber = Math.ceil((
+        TotalBriefcaseFromLocalStorage
+            .map(m => m.price == undefined ? m.price = '0' : m.price)
+            .map(m => Number(m))
+            .reduce((previous, current) => previous + current)
+    ) * 100) / 100
 
     return (
         <div className={s.wrapper}>
@@ -38,11 +37,16 @@ export const Header = () => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>
-            <div className={s.cart} onClick={() => setIsOpen(true)} ><img src={img} alt="cart"/>
+            <div className={s.cart} onClick={() => setIsOpen(true)}><img src={img} alt="cart"/>
+                {/*<span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>*/}
                 <span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>
-                <span className={s.addInCart}>+ {oldPriceBriefcase[index2]}</span>
+                <span className={s.addInCart}>+ {
+
+                    reductionToNumber == 0 ? '0' : (oldPriceBriefcase[index2]).toFixed(2)
+
+                } USD</span>
                 <span>
-                    {4354} USD
+                    {Number(priceBriefcase).toFixed(2)} USD
                 </span>
             </div>
             <div>
@@ -52,7 +56,6 @@ export const Header = () => {
                 >
                 </Cart>
             </div>
-
 
             {/*<NavLink to={'/'}>Main</NavLink>*/}
             {/*<NavLink to={'/briefcase'}>Briefcase</NavLink>*/}

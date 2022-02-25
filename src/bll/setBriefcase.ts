@@ -46,6 +46,14 @@ export const setInBriefcaseFromLocalStorage = (payload: any) => {
     return {type: "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE", payload} as const
 }
 
+export const priceBriefcaseFromLocalStorage = (payload: any) => {
+    return (dispatch: any) => {
+        dispatch(setInBriefcaseFromLocalStorage(payload))
+        let res = payload.map((m: { price: any; count: any; }) => Number(m.price) * (m.count == undefined ? 0 : m.count)).reduce((prev: any, acc: any) => prev + acc)
+        dispatch(addPriceInBriefcase(res))
+    }
+}
+
 export type BriefcaseType = {
     id: string
     name: string

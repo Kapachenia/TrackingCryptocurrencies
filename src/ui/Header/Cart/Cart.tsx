@@ -23,9 +23,9 @@ export const Cart = (props: ModalType) => {
 
                 <div>
 
-                    {props.currencyInBriefcase.map(m => {
+                    {props.currencyInBriefcase.map((m, index) => {
                         return <BriefcaseItem
-                            key={m.id}
+                            key={index}
                             id={m.id}
                             name={m.name}
                             count={m.count}

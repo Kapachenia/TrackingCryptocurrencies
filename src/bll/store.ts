@@ -12,17 +12,9 @@ const rootReducer = combineReducers({
     headerInformation: setInfoForHeader,
 })
 
-let preloadedState
-const persistedTodosString = localStorage.getItem('state')
-
-if (persistedTodosString) {
-    preloadedState = JSON.parse(persistedTodosString)
-}
-
-export const store = createStore(rootReducer, preloadedState, applyMiddleware(thunk),)
+export const store = createStore(rootReducer, applyMiddleware(thunk),)
 
 store.subscribe(() => {
-    // store.getState().briefcase.currencyInBriefcase !==  && localStorage.setItem('state', JSON.stringify(store.getState().briefcase.currencyInBriefcase))
 localStorage.setItem('state', JSON.stringify(store.getState().briefcase.currencyInBriefcase))
 })
 

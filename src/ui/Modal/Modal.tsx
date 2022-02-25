@@ -24,9 +24,12 @@ export const Modal = (props: ModalType) => {
     const handleSubmit = () => {
         dispatch(setInBriefcase(props.id, props.name, currencyValue, props.price))
         setCurrencyValue(0)
-        dispatch(addPriceInBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
+        // dispatch(addPriceInBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
+        dispatch(addPriceInBriefcase(currencyValue * Number(props.price)))
         dispatch(setOldPriceBriefcase(Math.ceil((Number(props.price))*1000)/1000 * currencyValue))
     }
+
+
 
     return ReactDom.createPortal(
         <div className={s.wrapperPortal}>

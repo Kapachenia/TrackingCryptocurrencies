@@ -3,7 +3,7 @@ import {ItemsType} from "../api/api";
 
 const InitialState = {
     currencyInBriefcase: [
-        {} as { id?: string, name?: string, count?: any, price?: string }
+        {} as CurrencyInBriefcaseType
     ],
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
@@ -13,6 +13,8 @@ type InitialStateType = typeof InitialState
 
 export const setBriefcase = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
+        case "DELETE-PRICE-IN-CURRENCY":
+            return {...state, priceBriefcase: state.priceBriefcase - action.price}
         case "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE":
             return {...state, currencyInBriefcase: action.payload}
         case "SET-OLD-PRICE-BRIEFCASE":
@@ -25,19 +27,30 @@ export const setBriefcase = (state: InitialStateType = InitialState, action: Act
             if (test) {
                 return {
                     ...state, currencyInBriefcase: state.currencyInBriefcase
-                        .map(m => m.id === action.id ? {...m, count: m.count + action.count} : m)
+                        .map(m => m.id === action.id ? {
+                            ...m,
+                            count: m.count + action.count,
+                            price: m.price + action.price
+                        } : m)
                 }
             } else {
                 return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
             }
         case "DELETE-CURRENCY":
-            return {...state, currencyInBriefcase: [...state.currencyInBriefcase].filter(f => f.id !== action.id)}
+            return {
+                ...state, currencyInBriefcase: [...state.currencyInBriefcase]
+                    .filter(f => f.id !== action.id)
+            }
         default:
             return state
     }
 }
 
-export const setInBriefcase = (id?: string, name?: string, count?: any, price?: string) => {
+export const deletePriceInBriefcase = (price: number) => {
+    return {type: "DELETE-PRICE-IN-CURRENCY", price} as const
+}
+
+export const setInBriefcase = (id?: string, name?: string, count?: any, price?: any) => {
     return {type: "SET-IN-BRIEFCASE", id, name, count, price} as const
 }
 
@@ -60,7 +73,9 @@ export const setInBriefcaseFromLocalStorage = (payload: Array<ItemsType>) => {
 export const priceBriefcaseFromLocalStorage = (payload: Array<any>) => {
     return (dispatch: Dispatch<ActionsType>) => {
         dispatch(setInBriefcaseFromLocalStorage(payload))
-        let res = payload.map((m: { price: string; count: number; }) => Number(m.price) * (m.count == undefined ? 0 : m.count)).reduce((prev: any, acc: any) => prev + acc)
+        console.log(payload)
+        let res = payload.map((m: { price: string; count: number; }) => Number(m.price))
+            .reduce((prev: any, acc: any) => prev + acc)
         dispatch(addPriceInBriefcase(res))
     }
 }
@@ -83,4 +98,5 @@ type ActionsType = ReturnType<typeof setInBriefcase> |
     ReturnType<typeof deleteCurrency> |
     ReturnType<typeof addPriceInBriefcase> |
     ReturnType<typeof setOldPriceBriefcase> |
-    ReturnType<typeof setInBriefcaseFromLocalStorage>
+    ReturnType<typeof setInBriefcaseFromLocalStorage> |
+    ReturnType<typeof deletePriceInBriefcase>

@@ -9,7 +9,7 @@ type ChartType = {
     symbol: string
 }
 
-export const Chart = (props: ChartType) => {
+export const Chart = ({symbol}: ChartType) => {
 
     const detailsHistory = useSelector<AppRootStoreType, Array<DetailsHistoryType>>(state => state.setDetailsReducer.detailsHistory)
 
@@ -18,7 +18,7 @@ export const Chart = (props: ChartType) => {
             zoomType: 'x'
         },
         title: {
-            text: props.symbol
+            text: symbol
         },
         xAxis: {
             categories: detailsHistory.map(m => m.date)

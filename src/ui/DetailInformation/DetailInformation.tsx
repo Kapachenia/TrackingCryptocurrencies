@@ -11,23 +11,18 @@ import {ItemsType} from "../../api/api";
 export const DetailInformation = () => {
 
     const dispatch = useDispatch()
-
+    let navigate = useNavigate()
+    const [isOpen, setIsOpen] = useState(false)
     const detailsInformation = useSelector<AppRootStoreType, ItemsType>(state => state.setDetailsReducer.detailsInformation)
 
     const toFloor = (num: string) => {
         if (num) return Math.floor(Number(num))
     }
 
-    const [isOpen, setIsOpen] = useState(false)
-
-
-    let navigate = useNavigate()
-
     const clickHandler = () => {
         dispatch(setCurrencyTC(0))
         navigate("/")
     }
-
 
     return (
         <div className={s.wrapper}>

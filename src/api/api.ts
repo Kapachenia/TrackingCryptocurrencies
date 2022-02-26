@@ -20,7 +20,7 @@ export const itemsAPI = {
 }
 
 type ItemsResType = {
-    data: Array<ItemsType>
+    data: Array<ItemsForHeaderType>
     timestamp: number
 }
 
@@ -38,20 +38,20 @@ export type ItemsType = {
     vwap24Hr: string
 }
 
-// export type ItemsForHeaderType = {
-//     changePercent24Hr: string
-//     explorer: string
-//     id: string
-//     marketCapUsd: string
-//     maxSupply: string
-//     name: string
-//     priceUsd: string
-//     rank: string
-//     supply: string
-//     symbol: string
-//     volumeUsd24Hr: string
-//     vwap24Hr: string
-// }
+export type ItemsForHeaderType = {
+    changePercent24Hr: string
+    explorer: string
+    id: string
+    marketCapUsd: string
+    maxSupply: string
+    name: string
+    priceUsd: string
+    rank: string
+    supply: string
+    symbol: string
+    volumeUsd24Hr: string
+    vwap24Hr: string
+}
 
 export type DetailInformationResType = {
     data: ItemsType

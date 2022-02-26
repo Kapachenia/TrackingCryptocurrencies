@@ -16,15 +16,23 @@ type ItemType = {
     price: string
 }
 
-export const Item = (props: ItemType) => {
+export const Item = ({
+                         id,
+                         price,
+                         name,
+                         symbol,
+                         marketCapUsd,
+                         rank,
+                         supply
+                     }: ItemType) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch()
     let navigate = useNavigate()
 
     const clickHandler = () => {
-        dispatch(setDetailsTC(props.name.toLowerCase()))
-        dispatch(setHistoryTC(props.name.toLowerCase()))
+        dispatch(setDetailsTC(name.toLowerCase()))
+        dispatch(setHistoryTC(name.toLowerCase()))
         navigate("/detailInformation")
     }
 
@@ -35,17 +43,17 @@ export const Item = (props: ItemType) => {
     return (
         <tbody>
         <tr className={s.content__other_styles}>
-            <td>{props.rank}</td>
-            <td className={s.symbol} onClick={clickHandler}>{props.symbol}</td>
-            <td className={s.name} onClick={clickHandler}>{props.name}</td>
-            <td>${Math.floor(Number.parseInt(props.marketCapUsd))}</td>
-            <td>{Math.floor(Number.parseInt(props.supply))}</td>
+            <td>{rank}</td>
+            <td className={s.symbol} onClick={clickHandler}>{symbol}</td>
+            <td className={s.name} onClick={clickHandler}>{name}</td>
+            <td>${Math.floor(Number.parseInt(marketCapUsd))}</td>
+            <td>{Math.floor(Number.parseInt(supply))}</td>
             <Modal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
-                id={props.id}
-                name={props.name}
-                price={props.price}
+                id={id}
+                name={name}
+                price={price}
             >
             </Modal>
             <td className={s.wrapper__button_styles}>

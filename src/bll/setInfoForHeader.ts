@@ -1,8 +1,8 @@
-import {itemsAPI} from "../api/api";
+import {itemsAPI, ItemsForHeaderType} from "../api/api";
 import {Dispatch} from "react";
 
 const InitialState = {
-    infoForHeader: []
+    infoForHeader: [] as Array<ItemsForHeaderType>
 }
 
 type InitialStateType = typeof InitialState
@@ -17,7 +17,7 @@ export const setInfoForHeader = (state: InitialStateType = InitialState, action:
     }
 }
 
-export const setInfoForHeaderAC = (currency: any) => {
+export const setInfoForHeaderAC = (currency: Array<ItemsForHeaderType>) => {
     return {type: "SET-INFO-FOR-HEADER", currency} as const
 }
 

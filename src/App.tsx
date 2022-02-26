@@ -11,13 +11,17 @@ export const App = () => {
 
     const dispatch = useDispatch()
 
+    const test = JSON.parse(localStorage.getItem('state') || '[]')
+
+
     useEffect(() => {
         dispatch(setCurrencyTC(0))
         dispatch(setInfoForHeaderTC())
-        //@ts-ignore
-        let parseForBriefcase = JSON.parse(localStorage.getItem('state'))
-        if (parseForBriefcase.length > 1) {
-            dispatch(priceBriefcaseFromLocalStorage(parseForBriefcase))
+        let parseForBriefcase = JSON.parse(localStorage.getItem('state') || '[]')
+        if (test.length > 1) {
+            console.log(parseForBriefcase)
+
+            dispatch(priceBriefcaseFromLocalStorage(test))
         }
     }, [])
 

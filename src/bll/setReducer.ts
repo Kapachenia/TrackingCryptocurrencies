@@ -57,15 +57,16 @@ export const setCurrencyTC = (offset: number) => {
             .then(res => {
                 dispatch(setCurrency(res.data.data))
                 dispatch(setOffset(offset))
-                dispatch(setStatus(false))
+                // dispatch(setStatus(false))
             })
             .catch(err => {
                 console.log(err.message)
-                debugger
             })
-            // .finally(() => {
-            //
-            // })
+            .finally(() => {
+
+                dispatch(setStatus(false))
+
+            })
     }
 }
 

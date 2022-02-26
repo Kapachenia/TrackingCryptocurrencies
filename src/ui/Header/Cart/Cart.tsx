@@ -11,26 +11,32 @@ type CartType = {
     currencyInBriefcase: Array<CurrencyInBriefcaseType>
 }
 
-export const Cart = (props: CartType) => {
+export const Cart = ({
+                         open,
+                         children,
+                         onClose,
+                         currencyInBriefcase
+                     }: CartType) => {
 
-    if (!props.open) return null
+    if (!open) return null
 
     return ReactDom.createPortal(
         <div className={s.wrapperPortal}>
             <div className={s.overlay_style}/>
             <div className={s.modal_styles}>
-                <div>{props.children}</div>
+                <div>{children}</div>
                 <div>
-                    {props.currencyInBriefcase.map((m, index) => {
+                    {currencyInBriefcase.map((m, index) => {
                         return <BriefcaseItem
                             key={index}
                             id={m.id}
                             name={m.name}
                             count={m.count}
+                            price={m.price}
                         />
                     })}
                 </div>
-                <button onClick={props.onClose}>Close</button>
+                <button onClick={onClose}>Close</button>
             </div>
         </div>,
         document.getElementById('cart') as HTMLElement

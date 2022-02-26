@@ -1,30 +1,40 @@
 import React from "react";
 import s from "./BriefcaseItem.module.scss"
 import {useDispatch} from "react-redux";
-import {deleteCurrency} from "../../../../bll/setBriefcase";
+import {deleteCurrency, deletePriceInBriefcase, setOldPriceBriefcase} from "../../../../bll/setBriefcase";
 
 type BriefcaseItemType = {
     id?: string
     name?: string
     count?: string
+    price?: string
 }
 
-export const BriefcaseItem = (props: BriefcaseItemType) => {
+export const BriefcaseItem = ({
+                                  id,
+                                  name,
+                                  count,
+                                  price
+                              }: BriefcaseItemType) => {
 
     const dispatch = useDispatch()
+
+    const deleteHandler = () => {
+        dispatch(deleteCurrency(id))
+        dispatch(deletePriceInBriefcase(Number(price)))
+        dispatch(setOldPriceBriefcase(0))
+    }
 
     return (
         <div className={s.wrapper}>
             <div>
-                {props.name}
+                {name}
             </div>
             <div>
-                {props.count}
+                {count}
             </div>
             <div>
-                {
-                    props.id && <button onClick={() => dispatch(deleteCurrency(props.id))}>x</button>
-                }
+                {id && <button onClick={deleteHandler}>x</button>}
             </div>
         </div>
     )

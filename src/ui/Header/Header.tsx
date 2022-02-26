@@ -17,9 +17,15 @@ export const Header = () => {
     const oldPriceBriefcase = useSelector<AppRootStoreType, Array<number>>(state => state.briefcase.oldPriceBriefcase)
     const TotalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<CurrencyInBriefcaseType>>(state => state.briefcase.currencyInBriefcase)
 
-    const index1 = oldPriceBriefcase.length - 2
-    const index2 = oldPriceBriefcase.length - 1
-    const result = (Number(priceBriefcase) - oldPriceBriefcase[index1]) / Number(priceBriefcase) * 100
+    const index = oldPriceBriefcase.length - 1
+
+    let PreviousBriefcaseValue = priceBriefcase - oldPriceBriefcase[oldPriceBriefcase.length - 1]
+
+    let res2 = [...oldPriceBriefcase]
+
+    let ratio = PreviousBriefcaseValue / res2[res2.length - 1]
+
+    const result = 100 / ratio
 
     let reductionToNumber = Math.ceil((
         TotalBriefcaseFromLocalStorage
@@ -36,9 +42,9 @@ export const Header = () => {
                 })}
             </div>
             <div className={s.cart} onClick={() => setIsOpen(true)}><img src={img} alt="cart"/>
-                <span className={s.addInCart}>+ {isNaN(result) ? 0 : Math.floor(result)} %</span>
+                <span className={s.addInCart}>+ {isNaN(result) ? 0 : result.toFixed(2)} %</span>
                 <span className={s.addInCart}>+ {
-                    reductionToNumber == 0 ? '0' : (oldPriceBriefcase[index2]).toFixed(2)
+                    reductionToNumber == 0 ? '0' : (oldPriceBriefcase[index]).toFixed(2)
                 } USD</span>
                 <span>
                     {Number(priceBriefcase).toFixed(2)} USD
@@ -54,6 +60,14 @@ export const Header = () => {
             {/*<NavLink to={'/'}>Main</NavLink>*/}
             {/*<NavLink to={'/briefcase'}>Briefcase</NavLink>*/}
             {/*<NavLink to={'/detailInformation'}>DetailInformation</NavLink>*/}
+        </div>
+    )
+}
+
+export const InfoForHeader = () => {
+    return (
+        <div>
+
         </div>
     )
 }

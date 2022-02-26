@@ -4,12 +4,14 @@ import {setReducer} from "./setReducer";
 import {serDetailsInformation} from "./serDetailsInformation";
 import {setBriefcase} from "./setBriefcase";
 import {setInfoForHeader} from "./setInfoForHeader";
+import {isLoading} from "./isLoading";
 
 const rootReducer = combineReducers({
     setReducer: setReducer,
     setDetailsReducer: serDetailsInformation,
     briefcase: setBriefcase,
     headerInformation: setInfoForHeader,
+    loading: isLoading,
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk),)

@@ -7,6 +7,7 @@ const InitialState = {
     totalPage: 10,
     currentPage: 1,
     offset: 100,
+    isLoading: true,
 }
 
 type InitialStateType = typeof InitialState
@@ -27,6 +28,10 @@ export const setReducer = (state: InitialStateType = InitialState, action: Actio
     }
 }
 
+export const setStatus = (isLoading: boolean) => {
+    return {type: 'SET-LOADING', isLoading} as const
+}
+
 export const setCurrency = (payload: any) => {
     return {type: "SET-CURRENCY", payload} as const
 }
@@ -43,21 +48,29 @@ export const setOffset = (offset: number) => {
     return {type: "SET-OFFSET", offset} as const
 }
 
-
-
-
-
 export const setCurrencyTC = (offset: number) => {
     return (dispatch: Dispatch<ActionsType>) => {
+
+        dispatch(setStatus(true))
+
         itemsAPI.setItems(offset)
             .then(res => {
                 dispatch(setCurrency(res.data.data))
                 dispatch(setOffset(offset))
+                dispatch(setStatus(false))
             })
+            .catch(err => {
+                console.log(err.message)
+                debugger
+            })
+            // .finally(() => {
+            //
+            // })
     }
 }
 
 type ActionsType = ReturnType<typeof setCurrency> |
     ReturnType<typeof setCurrentPage> |
     ReturnType<typeof setTotalPage> |
-    ReturnType<typeof setOffset>
+    ReturnType<typeof setOffset> |
+    ReturnType<typeof setStatus>

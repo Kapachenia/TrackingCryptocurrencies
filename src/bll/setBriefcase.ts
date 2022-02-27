@@ -3,8 +3,9 @@ import {ItemsType} from "../api/api";
 
 const InitialState = {
     currencyInBriefcase: [
-        {} as CurrencyInBriefcaseType
-    ],
+        // {} as CurrencyInBriefcaseType
+    ] as Array<TESTBriefcaseType>,
+    // ] as Array<CurrencyInBriefcaseType>,
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
 }
@@ -66,18 +67,25 @@ export const setOldPriceBriefcase = (oldPrice: number) => {
     return {type: "SET-OLD-PRICE-BRIEFCASE", oldPrice} as const
 }
 
-export const setInBriefcaseFromLocalStorage = (payload: Array<ItemsType>) => {
+export const setInBriefcaseFromLocalStorage = (payload: Array<any>) => {
     return {type: "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE", payload} as const
 }
 
 export const priceBriefcaseFromLocalStorage = (payload: Array<any>) => {
     return (dispatch: Dispatch<ActionsType>) => {
-        dispatch(setInBriefcaseFromLocalStorage(payload))
         console.log(payload)
-        let res = payload.map((m: { price: string; count: number; }) => Number(m.price))
+        dispatch(setInBriefcaseFromLocalStorage(payload))
+        let res = payload.map(m => Number(m.price))
             .reduce((prev: any, acc: any) => prev + acc)
         dispatch(addPriceInBriefcase(res))
     }
+}
+
+export type TESTBriefcaseType = {
+    id: string | undefined
+    name: string | undefined
+    count: string | undefined
+    price: string | undefined
 }
 
 export type BriefcaseType = {

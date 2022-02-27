@@ -27,12 +27,16 @@ export const Header = () => {
 
     const result = 100 / ratio
 
-    let reductionToNumber = Math.ceil((
-        TotalBriefcaseFromLocalStorage
-            .map(m => m.price == undefined ? m.price = '0' : m.price)
-            .map(m => Number(m))
-            .reduce((previous, current) => previous + current)
-    ) * 100) / 100
+    // console.log(TotalBriefcaseFromLocalStorage)
+
+    let reductionToNumber
+
+    if (TotalBriefcaseFromLocalStorage.length === 0) {
+        let reductionToNumber = 0
+    } else {
+        // @ts-ignore
+        reductionToNumber = TotalBriefcaseFromLocalStorage.map(m => m.price).reduce((prev, current) => prev + current)
+    }
 
     return (
         <div className={s.wrapper}>
@@ -44,10 +48,10 @@ export const Header = () => {
             <div className={s.cart} onClick={() => setIsOpen(true)}><img src={img} alt="cart"/>
                 <span className={s.addInCart}>+ {isNaN(result) ? 0 : result.toFixed(2)} %</span>
                 <span className={s.addInCart}>+ {
-                    reductionToNumber == 0 ? '0' : (oldPriceBriefcase[index]).toFixed(2)
+                    reductionToNumber === '0' ? '0' : (oldPriceBriefcase[index]).toFixed(2)
                 } USD</span>
                 <span>
-                    {Number(priceBriefcase).toFixed(2)} USD
+                    {reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD
                 </span>
             </div>
             <div>

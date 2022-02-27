@@ -19,8 +19,6 @@ export const App = () => {
         dispatch(setInfoForHeaderTC())
         let parseForBriefcase = JSON.parse(localStorage.getItem('state') || '[]')
         if (test.length > 1) {
-            console.log(parseForBriefcase)
-
             dispatch(priceBriefcaseFromLocalStorage(test))
         }
     }, [])

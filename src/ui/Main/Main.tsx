@@ -8,9 +8,7 @@ import preloader from "../../asset/preloader.png"
 
 export const Main = () => {
 
-    const setStatus = useSelector<AppRootStoreType, boolean>(state => state.setReducer.isLoading)
-
-    console.log(setStatus)
+    const setStatus = useSelector<AppRootStoreType, boolean>(state => state.loading.isLoading)
 
     return (
         <div className={s.wrapper}>

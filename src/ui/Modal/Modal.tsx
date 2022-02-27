@@ -8,9 +8,9 @@ type ModalType = {
     open: boolean
     children?: React.ReactNode
     onClose: () => void
-    id?: string
-    name?: string
-    price?: string
+    id: string
+    name: string
+    price: string
 }
 
 export const Modal = ({
@@ -28,10 +28,10 @@ export const Modal = ({
     if (!open) return null
 
     const handleSubmit = () => {
-        dispatch(setInBriefcase(id, name, currencyValue, Number(price) * currencyValue))
+        dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))
         setCurrencyValue(0)
         dispatch(addPriceInBriefcase(currencyValue * Number(price)))
-        dispatch(setOldPriceBriefcase(Math.ceil((Number(price)) * 1000) / 1000 * currencyValue))
+        dispatch(setOldPriceBriefcase(Number(price) * currencyValue))
     }
 
     return ReactDom.createPortal(
@@ -41,8 +41,9 @@ export const Modal = ({
                 <span className={s.name}>{name}</span>
                 <div>{children}</div>
                 <div>
-                    <div className={s.value}><input type="number" value={currencyValue}
-                                                    onChange={(e) => setCurrencyValue(Number(e.target.value))}/>
+                    <div className={s.value}>
+                        <input type="number" step="0.1" value={currencyValue} onChange={(e) => setCurrencyValue(Number(e.target.value))}/>
+
                     </div>
                 </div>
                 <div className={s.wrapper__button}>

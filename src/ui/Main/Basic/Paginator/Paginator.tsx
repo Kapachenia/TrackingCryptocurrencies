@@ -2,9 +2,9 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setCurrencyTC, setCurrentPage} from "../../../../bll/setReducer";
 import {AppRootStoreType} from "../../../../bll/store";
-import s from "./PaginatorTest.module.scss"
+import s from "./Paginator.module.scss"
 
-export const PaginatorTest = () => {
+export const Paginator = () => {
 
     const currentPage = useSelector<AppRootStoreType, number>(state => state.setReducer.currentPage)
     const totalPage = useSelector<AppRootStoreType, number>(state => state.setReducer.totalPage)
@@ -12,7 +12,7 @@ export const PaginatorTest = () => {
 
     const toArray = () => {
         let arr = []
-        for (let i = 0; i < totalPage; i++) {
+        for (let i = 1; i < totalPage; i++) {
             arr[i] = i
         }
         return arr

@@ -4,7 +4,7 @@ import {Dispatch} from "react";
 const InitialState = {
     data: [],
     pageSize: 10,
-    totalPage: 10,
+    totalPage: 11,
     currentPage: 1,
     offset: 100,
     isLoading: true,
@@ -55,17 +55,16 @@ export const setCurrencyTC = (offset: number) => {
 
         itemsAPI.setItems(offset)
             .then(res => {
+                // console.log(res.data.data)
                 dispatch(setCurrency(res.data.data))
                 dispatch(setOffset(offset))
-                // dispatch(setStatus(false))
+                // dispatch(setUpdatePriceCart(res.data.data))
             })
             .catch(err => {
                 console.log(err.message)
             })
             .finally(() => {
-
                 dispatch(setStatus(false))
-
             })
     }
 }

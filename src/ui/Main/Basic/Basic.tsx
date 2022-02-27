@@ -1,5 +1,5 @@
 import React from "react";
-import {PaginatorTest} from "./PaginatorTest/PaginatorTest";
+import {Paginator} from "./Paginator/Paginator";
 import {ItemsList} from "./ItemsList/ItemsList";
 import s from "./Basic.module.scss"
 
@@ -10,7 +10,7 @@ export const Basic = () => {
                 <ItemsList/>
             </div>
             <div className={s.wrapper}>
-                <PaginatorTest/>
+                <Paginator/>
             </div>
         </div>
     )

@@ -10,16 +10,13 @@ import {priceBriefcaseFromLocalStorage} from "./bll/setBriefcase";
 export const App = () => {
 
     const dispatch = useDispatch()
-
-    const test = JSON.parse(localStorage.getItem('state') || '[]')
-
+    const infoFromLofalStorage = JSON.parse(localStorage.getItem('state') || '[]')
 
     useEffect(() => {
         dispatch(setCurrencyTC(0))
         dispatch(setInfoForHeaderTC())
-        let parseForBriefcase = JSON.parse(localStorage.getItem('state') || '[]')
-        if (test.length > 1) {
-            dispatch(priceBriefcaseFromLocalStorage(test))
+        if (infoFromLofalStorage.length > 0) {
+            dispatch(priceBriefcaseFromLocalStorage(infoFromLofalStorage))
         }
     }, [])
 

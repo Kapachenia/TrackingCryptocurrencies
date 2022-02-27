@@ -17,6 +17,9 @@ export const itemsAPI = {
     setInfoForHeader() {
         return instance.get<ItemsResType>(`?limit=${3}&offset=${0}`)
     },
+    updatePriceCart(id: string) {
+        return instance.get(`/${id}`)
+    },
 }
 
 type ItemsResType = {

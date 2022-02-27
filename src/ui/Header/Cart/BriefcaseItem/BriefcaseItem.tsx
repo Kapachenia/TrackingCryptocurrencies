@@ -6,8 +6,8 @@ import {deleteCurrency, deletePriceInBriefcase, setOldPriceBriefcase} from "../.
 type BriefcaseItemType = {
     id?: string
     name?: string
-    count?: string
-    price?: string
+    count?: number
+    price?: number
 }
 
 export const BriefcaseItem = ({
@@ -31,7 +31,10 @@ export const BriefcaseItem = ({
                 {name}
             </div>
             <div>
-                {count}
+                {count?.toFixed(2)}
+            </div>
+            <div>
+                {price?.toFixed(2)}
             </div>
             <div>
                 {id && <button onClick={deleteHandler}>x</button>}

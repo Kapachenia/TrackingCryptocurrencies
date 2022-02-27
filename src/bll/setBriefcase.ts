@@ -1,11 +1,8 @@
 import {Dispatch} from "react";
-import {ItemsType} from "../api/api";
 
 const InitialState = {
     currencyInBriefcase: [
-        // {} as CurrencyInBriefcaseType
-    ] as Array<TESTBriefcaseType>,
-    // ] as Array<CurrencyInBriefcaseType>,
+    ] as Array<BriefcaseType>,
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
 }
@@ -47,11 +44,15 @@ export const setBriefcase = (state: InitialStateType = InitialState, action: Act
     }
 }
 
+// export const setUpdatePriceCart = (payload: any) => {
+//     return {type: "UPDATE-PRICE-CART", payload} as const
+// }
+
 export const deletePriceInBriefcase = (price: number) => {
     return {type: "DELETE-PRICE-IN-CURRENCY", price} as const
 }
 
-export const setInBriefcase = (id?: string, name?: string, count?: any, price?: any) => {
+export const setInBriefcase = (id: string, name: string, count: number, price: number) => {
     return {type: "SET-IN-BRIEFCASE", id, name, count, price} as const
 }
 
@@ -67,13 +68,12 @@ export const setOldPriceBriefcase = (oldPrice: number) => {
     return {type: "SET-OLD-PRICE-BRIEFCASE", oldPrice} as const
 }
 
-export const setInBriefcaseFromLocalStorage = (payload: Array<any>) => {
+export const setInBriefcaseFromLocalStorage = (payload: Array<BriefcaseType>) => {
     return {type: "SET-IN-BRIEFCASE-FROM-LOCAL-STORAGE", payload} as const
 }
 
-export const priceBriefcaseFromLocalStorage = (payload: Array<any>) => {
+export const priceBriefcaseFromLocalStorage = (payload: Array<BriefcaseType>) => {
     return (dispatch: Dispatch<ActionsType>) => {
-        console.log(payload)
         dispatch(setInBriefcaseFromLocalStorage(payload))
         let res = payload.map(m => Number(m.price))
             .reduce((prev: any, acc: any) => prev + acc)
@@ -81,30 +81,17 @@ export const priceBriefcaseFromLocalStorage = (payload: Array<any>) => {
     }
 }
 
-export type TESTBriefcaseType = {
-    id: string | undefined
-    name: string | undefined
-    count: string | undefined
-    price: string | undefined
-}
-
 export type BriefcaseType = {
     id: string
     name: string
-    count: string
-    price: string
+    count: number
+    price: number
 }
 
-export type CurrencyInBriefcaseType = {
-    id?: string
-    name?: string
-    count?: string
-    price?: string
-}
-
-type ActionsType = ReturnType<typeof setInBriefcase> |
-    ReturnType<typeof deleteCurrency> |
-    ReturnType<typeof addPriceInBriefcase> |
-    ReturnType<typeof setOldPriceBriefcase> |
-    ReturnType<typeof setInBriefcaseFromLocalStorage> |
-    ReturnType<typeof deletePriceInBriefcase>
+type ActionsType = ReturnType<typeof setInBriefcase>
+    | ReturnType<typeof deleteCurrency>
+    | ReturnType<typeof addPriceInBriefcase>
+    | ReturnType<typeof setOldPriceBriefcase>
+    | ReturnType<typeof setInBriefcaseFromLocalStorage>
+    | ReturnType<typeof deletePriceInBriefcase>
+    // | ReturnType<typeof setUpdatePriceCart>

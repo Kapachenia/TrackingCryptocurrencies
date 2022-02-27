@@ -2,13 +2,13 @@ import React from "react";
 import s from "./Cart.module.scss";
 import ReactDom from 'react-dom';
 import {BriefcaseItem} from "./BriefcaseItem/BriefcaseItem";
-import {CurrencyInBriefcaseType} from "../../../bll/setBriefcase";
+import {BriefcaseType} from "../../../bll/setBriefcase";
 
 type CartType = {
     open: boolean
     children?: React.ReactNode
-    onClose: any
-    currencyInBriefcase: Array<CurrencyInBriefcaseType>
+    onClose: () => void
+    currencyInBriefcase: Array<BriefcaseType>
 }
 
 export const Cart = ({

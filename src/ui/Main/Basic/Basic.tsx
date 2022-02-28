@@ -1,7 +1,7 @@
 import React from "react";
 import {Paginator} from "./Paginator/Paginator";
 import {ItemsList} from "./ItemsList/ItemsList";
-import s from "./Basic.module.scss"
+import "../../../styles/styles.scss"
 
 export const Basic = () => {
     return (
@@ -9,7 +9,7 @@ export const Basic = () => {
             <div>
                 <ItemsList/>
             </div>
-            <div className={s.wrapper}>
+            <div className={'wrapper-center wrapper-center__block-paginator--inner'}>
                 <Paginator/>
             </div>
         </div>

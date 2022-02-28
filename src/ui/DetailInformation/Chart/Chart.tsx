@@ -2,8 +2,8 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import {useSelector} from "react-redux";
-import {AppRootStoreType} from "../../bll/store";
-import {DetailsHistoryType} from "../../api/api";
+import {AppRootStoreType} from "../../../bll/store";
+import {DetailsHistoryType} from "../../../api/api";
 
 type ChartType = {
     symbol: string
@@ -26,9 +26,7 @@ export const Chart = ({symbol}: ChartType) => {
         series: [
             {
                 name: 'Cost $',
-                data: detailsHistory.map(el => {
-                    return Math.floor(+el.priceUsd)
-                })
+                data: detailsHistory.map(el => Math.floor(+el.priceUsd))
             }
         ]
     };

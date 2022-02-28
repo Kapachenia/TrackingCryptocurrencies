@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
-import {Chart} from "../Chart/Chart";
-import s from "./DetailInformation.module.scss"
+import {Chart} from "./Chart/Chart";
 import {Modal} from "../Modal/Modal";
 import {useNavigate} from "react-router-dom";
-import {setCurrencyTC} from "../../bll/setReducer";
 import {ItemsType} from "../../api/api";
+import "../../styles/styles.scss";
+import {setCurrencyTC} from "../../bll/setReducer";
 
 export const DetailInformation = () => {
 
@@ -25,18 +25,18 @@ export const DetailInformation = () => {
     }
 
     return (
-        <div className={s.wrapper}>
-            <div className={s.centre}>
-                <h3>Detail Information</h3>
-                <div>Символ: {detailsInformation.symbol}</div>
-                <div>Название актива: {detailsInformation.name}</div>
-                <div>Доступное предложение: {toFloor(detailsInformation.supply)}</div>
-                <div>Количество активов: {toFloor(detailsInformation.maxSupply)}</div>
-                <div>Цена: {toFloor(detailsInformation.marketCapUsd)}</div>
-                <div>Объем торгов за 24 часа: {toFloor(detailsInformation.volumeUsd24Hr)}$</div>
-                <div>Цена взвешенная по объему: {toFloor(detailsInformation.priceUsd)}$</div>
-                <div>Направление и значение за 24 часа: {toFloor(detailsInformation.changePercent24Hr)}</div>
-                <div>Средневзвешенная по объему цена за 24 часа: {toFloor(detailsInformation.vwap24Hr)}</div>
+        <div className={'wrapper-center detail '}>
+            <div className={'content-detail'}>
+                <h3 className={'title'}>Detail Information</h3>
+                <div className={'content-detail__item'}>Символ: {detailsInformation.symbol}</div>
+                <div className={'content-detail__item'}>Название актива: {detailsInformation.name}</div>
+                <div className={'content-detail__item'}>Доступное предложение: {toFloor(detailsInformation.supply)}</div>
+                <div className={'content-detail__item'}>Количество активов: {toFloor(detailsInformation.maxSupply)}</div>
+                <div className={'content-detail__item'}>Цена: {toFloor(detailsInformation.marketCapUsd)}</div>
+                <div className={'content-detail__item'}>Объем торгов за 24 часа: {toFloor(detailsInformation.volumeUsd24Hr)}$</div>
+                <div className={'content-detail__item'}>Цена взвешенная по объему: {toFloor(detailsInformation.priceUsd)}$</div>
+                <div className={'content-detail__item'}>Направление и значение за 24 часа: {toFloor(detailsInformation.changePercent24Hr)}</div>
+                <div className={'content-detail__item'}>Средневзвешенная по объему цена за 24 часа: {toFloor(detailsInformation.vwap24Hr)}</div>
                 <div>
                     <Modal open={isOpen}
                            onClose={() => setIsOpen(false)}
@@ -46,13 +46,13 @@ export const DetailInformation = () => {
                     >
                     </Modal>
                 </div>
-                <div className={s.button_wrapper_styles}>
-                    <button className={s.wrapperButton} onClick={() => setIsOpen(true)}>Купить</button>
-                    <button className={s.wrapperButton} onClick={clickHandler}>Назад</button>
+                <div className={'detail-information'}>
+                    <button className={'button--inner'} onClick={() => setIsOpen(true)}>Купить</button>
+                    <button className={'button--inner'} onClick={clickHandler}>Назад</button>
                 </div>
             </div>
-            <div className={s.wrapperChart}>
-                <Chart symbol={detailsInformation.name} />
+            <div className={'detail__chart'}>
+                <Chart symbol={detailsInformation.name}/>
             </div>
         </div>
     )

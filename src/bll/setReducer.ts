@@ -1,20 +1,24 @@
-import {itemsAPI} from "../api/api"
+import {itemsAPI, ItemsDetailType} from "../api/api"
 import {Dispatch} from "react";
 
 const InitialState = {
-    data: [],
+    data: [] as Array<ItemsDetailType>,
     pageSize: 10,
     totalPage: 11,
     currentPage: 1,
     offset: 100,
-    isLoading: true,
+    isLoading: false,
+    error: ''
 }
 
 type InitialStateType = typeof InitialState
 
-
 export const setReducer = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
+        case "SET-ERROR":
+            return {...state, error: action.error}
+        case "SET-LOADING":
+            return {...state, isLoading: action.isLoading}
         case "SET-OFFSET":
             return {...state, offset: action.offset}
         case "SET-CURRENCY":
@@ -28,11 +32,15 @@ export const setReducer = (state: InitialStateType = InitialState, action: Actio
     }
 }
 
-export const setStatus = (isLoading: boolean) => {
-    return {type: 'SET-LOADING', isLoading} as const
+export const setError = (error: string) => {
+    return {type: "SET-ERROR", error} as const
 }
 
-export const setCurrency = (payload: any) => {
+export const setStatus = (isLoading: boolean) => {
+    return {type: "SET-LOADING", isLoading} as const
+}
+
+export const setCurrency = (payload: Array<ItemsDetailType>) => {
     return {type: "SET-CURRENCY", payload} as const
 }
 
@@ -50,18 +58,14 @@ export const setOffset = (offset: number) => {
 
 export const setCurrencyTC = (offset: number) => {
     return (dispatch: Dispatch<ActionsType>) => {
-
         dispatch(setStatus(true))
-
         itemsAPI.setItems(offset)
             .then(res => {
-                // console.log(res.data.data)
                 dispatch(setCurrency(res.data.data))
                 dispatch(setOffset(offset))
-                // dispatch(setUpdatePriceCart(res.data.data))
             })
             .catch(err => {
-                console.log(err.message)
+                dispatch(setError(err.message))
             })
             .finally(() => {
                 dispatch(setStatus(false))
@@ -69,8 +73,10 @@ export const setCurrencyTC = (offset: number) => {
     }
 }
 
-type ActionsType = ReturnType<typeof setCurrency> |
-    ReturnType<typeof setCurrentPage> |
-    ReturnType<typeof setTotalPage> |
-    ReturnType<typeof setOffset> |
-    ReturnType<typeof setStatus>
+type ActionsType = ReturnType<typeof setCurrency>
+    | ReturnType<typeof setCurrentPage>
+    | ReturnType<typeof setTotalPage>
+    | ReturnType<typeof setOffset>
+    | ReturnType<typeof setStatus>
+    | ReturnType<typeof setStatus>
+    | ReturnType<typeof setError>

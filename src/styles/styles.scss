@@ -1,0 +1,170 @@
+.wrapper-center {
+  margin: 0 auto;
+  &__block-paginator--inner {
+    width: 200px;
+  }
+  &__items-list {
+    padding: 20px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.wrapper--inner {
+  display: flex;
+}
+
+.detail {
+  width: 600px;
+  background-color: aliceblue;
+}
+
+.wrapper__app {
+  min-height: 700px;
+  max-width: 1366px;
+  font-size: 16px;
+}
+
+.modal__button--inner {
+  margin: 10px;
+}
+
+.detail-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input--inner {
+  margin: 30px;
+}
+
+.button--inner {
+  margin: 30px;
+}
+
+.error__basic {
+  text-align: center;
+  color: red;
+}
+
+.modal__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 500px;
+  min-height: 200px;
+  background-color: white;
+  padding-top: 30px;
+}
+
+.header__wrapper {
+  flex-direction: column;
+  max-width: 700px;
+  height: 200px;
+  &__info {
+    height: 75px;
+  }
+}
+
+.header__cart--color {
+  color: green;
+}
+
+.header__cart {
+  flex-direction: row-reverse;
+  &--img {
+    height: 70px;
+    &:hover {
+      opacity: 50%;
+    }
+  }
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 1000;
+}
+
+.modal__name {
+  font-size: 14px;
+  font-weight: bold;
+  &--inner {
+    margin: 30px;
+  }
+}
+
+.modal__cell-sizes {
+  width: 90px;
+  height: 40px;
+}
+
+.preloader__inner {
+  color: green;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  &--img {
+    color: green;
+    width: 50px;
+  }
+}
+
+.wrapper__header-content {
+  display: inline-block;
+  height: 15px;
+  margin: 30px;
+}
+
+.header__item {
+  margin: 10px;
+  &:hover {
+    color: green;
+  }
+}
+
+.paginator__page {
+  padding: 5px;
+  &__selected {
+    font-weight: bold;
+  }
+}
+
+.item-content--cell {
+  padding: 5px;
+}
+
+.wrapper__content__button {
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper__content {
+  position: relative;
+  z-index: 2;
+}
+
+.item-content--symbol:hover {
+  color: green;
+}
+
+.item-content--name:hover {
+  color: green;
+}

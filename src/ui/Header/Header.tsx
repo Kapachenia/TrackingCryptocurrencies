@@ -1,21 +1,20 @@
 import React, {useState} from "react";
 import {InfoCrypto} from "./InfoCrypto/InfoCrypto";
-import s from "./Header.module.scss"
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../bll/store";
 import img from "../../asset/cart.png";
 import {Cart} from "./Cart/Cart";
-import {BriefcaseType} from "../../bll/setBriefcase";
+import {BriefcaseType} from "../../bll/cart";
 import {ItemsType} from "../../api/api";
 
 export const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false)
     const infoForHeader = useSelector<AppRootStoreType, Array<ItemsType>>(state => state.headerInformation.infoForHeader)
-    const currencyInBriefcase = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
-    const priceBriefcase = useSelector<AppRootStoreType, number>(state => state.briefcase.priceBriefcase)
-    const oldPriceBriefcase = useSelector<AppRootStoreType, Array<number>>(state => state.briefcase.oldPriceBriefcase)
-    const totalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.briefcase.currencyInBriefcase)
+    const currencyInBriefcase = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.cart.currencyInBriefcase)
+    const priceBriefcase = useSelector<AppRootStoreType, number>(state => state.cart.priceBriefcase)
+    const oldPriceBriefcase = useSelector<AppRootStoreType, Array<number>>(state => state.cart.oldPriceBriefcase)
+    const totalBriefcaseFromLocalStorage = useSelector<AppRootStoreType, Array<BriefcaseType>>(state => state.cart.currencyInBriefcase)
 
     const index = oldPriceBriefcase.length - 1
     let previousBriefcaseValue = priceBriefcase - oldPriceBriefcase[oldPriceBriefcase.length - 1]
@@ -30,32 +29,36 @@ export const Header = () => {
     let reductionToNumber
 
     if (totalBriefcaseFromLocalStorage.length === 0) {
-        let reductionToNumber = 0
+        reductionToNumber = 0
     } else {
         reductionToNumber = totalBriefcaseFromLocalStorage
             .map(m => m.price).reduce((prev, current) => prev + current)
     }
 
     return (
-        <div className={s.wrapper}>
-            <div className={s.wrapper__info}>
+        <div className={'wrapper-center wrapper--inner header__wrapper'}>
+            <div className={'header__wrapper__info'}>
                 {infoForHeader.map(m => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>
-            <div className={s.cart} onClick={() => setIsOpen(true)}><img src={img} alt="cart"/>
-                <span className={s.addInCart}>+ {isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} %</span>
-                <span className={s.addInCart}>+ {
-                    reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)
+            <div className={'wrapper--inner header__cart'}
+                 onClick={() => setIsOpen(true)}><img className={'header__cart--img pointer'} src={img} alt="cart"/>
+                <span className={'header__cart--color'}>
+                    {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
+                </span>
+                <span className={'header__cart--color'}>{
+                    `+ ${reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)}`
                 } USD</span>
                 <span>
-                    {reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD
+                    {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
                 </span>
             </div>
             <div>
                 <Cart open={isOpen}
                       onClose={() => setIsOpen(false)}
                       currencyInBriefcase={currencyInBriefcase}
+                      name={'Портфель'}
                 >
                 </Cart>
             </div>

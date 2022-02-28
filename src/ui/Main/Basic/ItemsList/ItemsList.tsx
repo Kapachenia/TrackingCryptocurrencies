@@ -17,8 +17,8 @@ export const ItemsList = () => {
                 <th className={'items-list__box'}>#</th>
                 <th className={'items-list__box'}>Обозначение</th>
                 <th className={'items-list__box'}>Наименование</th>
-                <th className={'items-list__box'}>Предложение</th>
-                <th className={'items-list__box'}>Доступно</th>
+                <th className={'items-list__box hidden'}>Предложение</th>
+                <th className={'items-list__box hidden'}>Доступно</th>
             </tr>
             </thead>
             {itemCurrency.slice(0, pageSize).map(m => (<Item

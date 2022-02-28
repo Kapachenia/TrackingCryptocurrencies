@@ -45,8 +45,8 @@ export const Item = ({
             <td className={'item-content--cell'}>{rank}</td>
             <td className={'item-content--name item-content--cell pointer'} onClick={clickHandler}>{symbol}</td>
             <td className={'item-content--name item-content--cell pointer'} onClick={clickHandler}>{name}</td>
-            <td className={'item-content--cell item-content--cell'}>${Math.floor(Number.parseInt(marketCapUsd))}</td>
-            <td className={'item-content--cell item-content--cell'}>{Math.floor(Number.parseInt(supply))}</td>
+            <td className={'item-content--cell item-content--cell hidden'}>${Math.floor(Number.parseInt(marketCapUsd))}</td>
+            <td className={'item-content--cell item-content--cell hidden'}>{Math.floor(Number.parseInt(supply))}</td>
             <Modal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}

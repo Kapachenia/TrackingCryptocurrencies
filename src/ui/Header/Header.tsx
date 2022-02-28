@@ -44,13 +44,13 @@ export const Header = () => {
             </div>
             <div className={'wrapper--inner header__cart'}
                  onClick={() => setIsOpen(true)}><img className={'header__cart--img pointer'} src={img} alt="cart"/>
-                <span className={'header__cart--color'}>
+                <span className={'header__cart--color header__cart--inner'}>
                     {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
                 </span>
-                <span className={'header__cart--color'}>{
+                <span className={'header__cart--color header__cart--inner'}>{
                     `+ ${reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)}`
                 } USD</span>
-                <span>
+                <span className={'header__cart--inner'}>
                     {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
                 </span>
             </div>

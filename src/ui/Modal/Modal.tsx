@@ -59,10 +59,10 @@ export const Modal = ({
                 </div>
                 <div className={'modal__wrapper-button wrapper--inner'}>
                     <div className={'modal__button--inner'}>
-                        <button className={'button'} onClick={handleSubmit}>Купить</button>
+                        <button className={'button pointer'} onClick={handleSubmit}>Купить</button>
                     </div>
                     <div className={'modal__button--inner'}>
-                        <button className={'button'} onClick={onClose}>Закрыть</button>
+                        <button className={'button pointer'} onClick={onClose}>Закрыть</button>
                     </div>
                 </div>
             </div>

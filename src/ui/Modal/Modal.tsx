@@ -22,13 +22,13 @@ export const Modal = ({
                           open
                       }: ModalType) => {
 
-    const [currencyValue, setCurrencyValue] = useState(0)
+    const [currencyValue, setCurrencyValue] = useState<number>(0)
     const dispatch = useDispatch()
 
     if (!open) return null
-
+    console.log(currencyValue, 'VALUE')
     const handleSubmit = () => {
-        if (currencyValue > 0) {
+        if (currencyValue && currencyValue > 0) {
             dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))
             setCurrencyValue(0)
             dispatch(addPriceInBriefcase(currencyValue * Number(price)))
@@ -44,10 +44,16 @@ export const Modal = ({
                 <div>{children}</div>
                 <div>
                     <div className={'input--inner'}>
-                        <input type="number"
+                        <input type="text"
                                step="0.1"
                                value={currencyValue}
-                               onChange={(e) => setCurrencyValue(Number(e.target.value))}
+                               onChange={(e) => {
+                                   if (/^[0-9]+$/.test(e.target.value)) {
+                                       const number = +e.target.value.replace(/^0+/, '')
+                                       setCurrencyValue(number)
+                                   }
+                               }
+                               }
                         />
                     </div>
                 </div>

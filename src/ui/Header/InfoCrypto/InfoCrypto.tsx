@@ -21,9 +21,9 @@ export const InfoCrypto = ({name, priceUsd}: InfoCryptoType) => {
 
     return (
         <div className={'wrapper__header-content'}>
-            <span className={'header__item pointer'} onClick={clickHandler}>{name}</span>
-            <span className={'header__item pointer'}>price</span>
-            <span className={'header__item pointer'}>{Math.floor(+priceUsd)}$</span>
+            <span className={'header__item pointer width'} onClick={clickHandler}>{name}</span>
+            <span className={'header__item pointer width'}>price</span>
+            <span className={'header__item pointer width'}>{Math.floor(+priceUsd)}$</span>
         </div>
     )
 }

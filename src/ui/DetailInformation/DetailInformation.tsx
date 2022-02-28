@@ -36,7 +36,7 @@ export const DetailInformation = () => {
                 <div className={'content-detail__item'}>Объем торгов за 24 часа: {toFloor(detailsInformation.volumeUsd24Hr)}$</div>
                 <div className={'content-detail__item'}>Цена взвешенная по объему: {toFloor(detailsInformation.priceUsd)}$</div>
                 <div className={'content-detail__item'}>Направление и значение за 24 часа: {toFloor(detailsInformation.changePercent24Hr)}</div>
-                <div className={'content-detail__item'}>Средневзвешенная по объему цена за 24 часа: {toFloor(detailsInformation.vwap24Hr)}</div>
+                <div className={'content-detail__item'}>Средневзвешенная за 24 часа: {toFloor(detailsInformation.vwap24Hr)}</div>
                 <div>
                     <Modal open={isOpen}
                            onClose={() => setIsOpen(false)}
@@ -51,7 +51,7 @@ export const DetailInformation = () => {
                     <button className={'button--inner'} onClick={clickHandler}>Назад</button>
                 </div>
             </div>
-            <div className={'detail__chart'}>
+            <div className={'detail__chart detail'}>
                 <Chart symbol={detailsInformation.name}/>
             </div>
         </div>

@@ -20,6 +20,3 @@ localStorage.setItem('state', JSON.stringify(store.getState().cart.currencyInBri
 
 
 export type AppRootStoreType = ReturnType<typeof rootReducer>
-
-// @ts-ignore
-window.store = store; // for dev

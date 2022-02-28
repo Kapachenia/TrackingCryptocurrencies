@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/TrackingCryptocurrencies/static/css/main.a8203720.css",
-    "main.js": "/TrackingCryptocurrencies/static/js/main.eacbe9ea.js",
+    "main.js": "/TrackingCryptocurrencies/static/js/main.0aba7120.js",
     "static/js/787.28cb0dcd.chunk.js": "/TrackingCryptocurrencies/static/js/787.28cb0dcd.chunk.js",
     "static/media/cart.png": "/TrackingCryptocurrencies/static/media/cart.25892c93ed02e9adc9f7.png",
     "static/media/preloader.png": "/TrackingCryptocurrencies/static/media/preloader.d27076749b59ae4d8466.png",
     "index.html": "/TrackingCryptocurrencies/index.html",
     "main.a8203720.css.map": "/TrackingCryptocurrencies/static/css/main.a8203720.css.map",
-    "main.eacbe9ea.js.map": "/TrackingCryptocurrencies/static/js/main.eacbe9ea.js.map",
+    "main.0aba7120.js.map": "/TrackingCryptocurrencies/static/js/main.0aba7120.js.map",
     "787.28cb0dcd.chunk.js.map": "/TrackingCryptocurrencies/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a8203720.css",
-    "static/js/main.eacbe9ea.js"
+    "static/js/main.0aba7120.js"
   ]
 }

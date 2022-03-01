@@ -42,8 +42,7 @@ export const Header = () => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>
-            <div className={'wrapper--inner header__cart'}
-                 onClick={() => setIsOpen(true)}><img className={'header__cart--img pointer'} src={img} alt="cart"/>
+            <div className={'wrapper--inner header__cart'}>
                 <span className={'header__cart--color header__cart--inner'}>
                     {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
                 </span>
@@ -54,7 +53,12 @@ export const Header = () => {
                     {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
                 </span>
             </div>
-            <div className={'cart-wrapper'}>
+            <div className={'cart-wrapper wrapper--inner'}>
+                <img className={'header__cart--img pointer'}
+                     onClick={() => setIsOpen(true)}
+                     src={img}
+                     alt="cart"
+                />
                 <Cart open={isOpen}
                       onClose={() => setIsOpen(false)}
                       currencyInBriefcase={currencyInBriefcase}

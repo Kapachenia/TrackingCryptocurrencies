@@ -62,6 +62,7 @@ export const setCurrencyTC = (offset: number) => {
         itemsAPI.setItems(offset)
             .then(res => {
                 dispatch(setCurrency(res.data.data))
+                // dispatch(setCurrency(res.data.data.map((r) => {id: uuid(), name: r.name})))
                 dispatch(setOffset(offset))
             })
             .catch(err => {

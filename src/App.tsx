@@ -16,7 +16,7 @@ export const App = () => {
         if (infoFromLocalStorage.length > 0) {
             dispatch(priceBriefcaseFromLocalStorage(infoFromLocalStorage))
         }
-    }, [])
+    }, [infoFromLocalStorage, dispatch])
 
     return (
         <div className={'wrapper-center wrapper__app'}>

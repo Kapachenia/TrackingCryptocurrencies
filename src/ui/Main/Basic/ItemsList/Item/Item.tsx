@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
-import {setDetailsTC, setHistoryTC} from "../../../../../bll/serDetailsInformation";
+import {setDetailsTC, setHistoryTC} from "../../../../../bll/detailsInformation";
 import {useNavigate} from "react-router-dom";
-import s from "./Item.module.scss";
 import {Modal} from "../../../../Modal/Modal";
-
+import "../../../../../styles/styles.scss";
 
 type ItemType = {
     id: string
@@ -41,13 +40,13 @@ export const Item = ({
     }
 
     return (
-        <tbody>
-        <tr className={s.content__other_styles}>
-            <td>{rank}</td>
-            <td className={s.symbol} onClick={clickHandler}>{symbol}</td>
-            <td className={s.name} onClick={clickHandler}>{name}</td>
-            <td>${Math.floor(Number.parseInt(marketCapUsd))}</td>
-            <td>{Math.floor(Number.parseInt(supply))}</td>
+        <tbody className={'item-content'}>
+        <tr className={'wrapper__content'}>
+            <td className={'item-content--cell'}>{rank}</td>
+            <td className={'item-content--name item-content--cell pointer'} onClick={clickHandler}>{symbol}</td>
+            <td className={'item-content--name item-content--cell pointer'} onClick={clickHandler}>{name}</td>
+            <td className={'item-content--cell item-content--cell hidden'}>${Math.floor(Number.parseInt(marketCapUsd))}</td>
+            <td className={'item-content--cell item-content--cell hidden'}>{Math.floor(Number.parseInt(supply))}</td>
             <Modal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
@@ -56,8 +55,8 @@ export const Item = ({
                 price={price}
             >
             </Modal>
-            <td className={s.wrapper__button_styles}>
-                <button className={s.bue} onClick={handleSubmit}>Купить</button>
+            <td className={'wrapper__content__button item-content--cell'}>
+                <button className={'item-content--buy pointer'} onClick={handleSubmit}>Купить</button>
             </td>
         </tr>
         </tbody>

@@ -1,27 +1,25 @@
 import React, {useEffect} from 'react';
-import './App.module.scss';
 import {RoutesApp} from "./ui/RoutesApp/RoutesApp";
-import s from "./App.module.scss";
-import {setCurrencyTC} from "./bll/setReducer";
 import {useDispatch} from "react-redux";
-import {setInfoForHeaderTC} from "./bll/setInfoForHeader";
-import {priceBriefcaseFromLocalStorage} from "./bll/setBriefcase";
+import {setInfoForHeaderTC} from "./bll/infoHeader";
+import {priceBriefcaseFromLocalStorage} from "./bll/cart";
+import {setCurrencyTC} from "./bll/setReducer";
 
 export const App = () => {
 
     const dispatch = useDispatch()
-    const infoFromLofalStorage = JSON.parse(localStorage.getItem('state') || '[]')
+    const infoFromLocalStorage = JSON.parse(localStorage.getItem('state') || '[]')
 
     useEffect(() => {
         dispatch(setCurrencyTC(0))
         dispatch(setInfoForHeaderTC())
-        if (infoFromLofalStorage.length > 0) {
-            dispatch(priceBriefcaseFromLocalStorage(infoFromLofalStorage))
+        if (infoFromLocalStorage.length > 0) {
+            dispatch(priceBriefcaseFromLocalStorage(infoFromLocalStorage))
         }
     }, [])
 
     return (
-        <div className={s.app__wrapper}>
+        <div className={'wrapper-center wrapper__app'}>
             <RoutesApp/>
         </div>
     )

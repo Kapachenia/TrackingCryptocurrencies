@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import s from "./Modal.module.scss";
 import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
-import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/setBriefcase";
+import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/cart";
+import "../../styles/styles.scss"
 
 type ModalType = {
     open: boolean
@@ -22,33 +22,48 @@ export const Modal = ({
                           open
                       }: ModalType) => {
 
-    const [currencyValue, setCurrencyValue] = useState(0)
+    const [currencyValue, setCurrencyValue] = useState<number>(0)
     const dispatch = useDispatch()
 
     if (!open) return null
-
+    console.log(currencyValue, 'VALUE')
     const handleSubmit = () => {
-        dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))
-        setCurrencyValue(0)
-        dispatch(addPriceInBriefcase(currencyValue * Number(price)))
-        dispatch(setOldPriceBriefcase(Number(price) * currencyValue))
+        if (currencyValue && currencyValue > 0) {
+            dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))
+            setCurrencyValue(0)
+            dispatch(addPriceInBriefcase(currencyValue * Number(price)))
+            dispatch(setOldPriceBriefcase(Number(price) * currencyValue))
+        }
     }
 
     return ReactDom.createPortal(
-        <div className={s.wrapperPortal}>
-            <div className={s.overlay__style}/>
-            <div className={s.modal__styles}>
-                <span className={s.name}>{name}</span>
+        <div className={'modal'}>
+            <div className={'modal__overlay'}/>
+            <div className={'modal__wrapper'}>
+                <span className={'modal__name'}>{name}</span>
                 <div>{children}</div>
                 <div>
-                    <div className={s.value}>
-                        <input type="number" step="0.1" value={currencyValue} onChange={(e) => setCurrencyValue(Number(e.target.value))}/>
-
+                    <div className={'input--inner'}>
+                        <input type="text"
+                               step="0.1"
+                               value={currencyValue}
+                               onChange={(e) => {
+                                   if (/^[0-9]+$/.test(e.target.value)) {
+                                       const number = +e.target.value.replace(/^0+/, '')
+                                       setCurrencyValue(number)
+                                   }
+                               }
+                               }
+                        />
                     </div>
                 </div>
-                <div className={s.wrapper__button}>
-                    <button onClick={handleSubmit}>Купить</button>
-                    <button onClick={onClose}>Закрыть</button>
+                <div className={'modal__wrapper-button wrapper--inner'}>
+                    <div className={'modal__button--inner'}>
+                        <button className={'button pointer'} onClick={handleSubmit}>Купить</button>
+                    </div>
+                    <div className={'modal__button--inner'}>
+                        <button className={'button pointer'} onClick={onClose}>Закрыть</button>
+                    </div>
                 </div>
             </div>
         </div>,

@@ -9,7 +9,7 @@ const InitialState = {
 type InitialStateType = typeof InitialState
 
 
-export const serDetailsInformation = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
+export const detailsInformation = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET-DETAILS-HISTORY":
             return {...state, detailsHistory: action.detailsHistory}
@@ -47,5 +47,5 @@ export const setHistoryTC = (id: string) => {
     }
 }
 
-type ActionsType = ReturnType<typeof setCurrency> |
-    ReturnType<typeof setDetailsHistory>
+type ActionsType = ReturnType<typeof setCurrency>
+    | ReturnType<typeof setDetailsHistory>

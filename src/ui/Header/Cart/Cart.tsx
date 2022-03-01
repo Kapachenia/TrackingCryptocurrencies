@@ -1,33 +1,36 @@
 import React from "react";
-import s from "./Cart.module.scss";
 import ReactDom from 'react-dom';
-import {BriefcaseItem} from "./BriefcaseItem/BriefcaseItem";
-import {BriefcaseType} from "../../../bll/setBriefcase";
+import {CartItems} from "./CartItems/CartItems";
+import {BriefcaseType} from "../../../bll/cart";
+import "../../../styles/styles.scss"
 
 type CartType = {
     open: boolean
     children?: React.ReactNode
     onClose: () => void
     currencyInBriefcase: Array<BriefcaseType>
+    name: string
 }
 
 export const Cart = ({
                          open,
                          children,
                          onClose,
-                         currencyInBriefcase
+                         currencyInBriefcase,
+                         name
                      }: CartType) => {
 
     if (!open) return null
 
     return ReactDom.createPortal(
-        <div className={s.wrapperPortal}>
-            <div className={s.overlay_style}/>
-            <div className={s.modal_styles}>
-                <div>{children}</div>
+        <div className={'modal'}>
+            <div className={'modal__overlay'}/>
+            <div className={'modal__wrapper'}>
+                <span className={'modal__name modal__name--inner'}>{name}</span>
+                <div className={'modal__children'}>{children}</div>
                 <div>
                     {currencyInBriefcase.map((m, index) => {
-                        return <BriefcaseItem
+                        return <CartItems
                             key={index}
                             id={m.id}
                             name={m.name}
@@ -36,7 +39,9 @@ export const Cart = ({
                         />
                     })}
                 </div>
-                <button onClick={onClose}>Close</button>
+                <div className={'modal__button'}>
+                    <button className={'button--inner'} onClick={onClose}>Close</button>
+                </div>
             </div>
         </div>,
         document.getElementById('cart') as HTMLElement

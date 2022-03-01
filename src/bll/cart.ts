@@ -9,7 +9,7 @@ const InitialState = {
 
 type InitialStateType = typeof InitialState
 
-export const setBriefcase = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
+export const cart = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "DELETE-PRICE-IN-CURRENCY":
             return {...state, priceBriefcase: state.priceBriefcase - action.price}
@@ -43,10 +43,6 @@ export const setBriefcase = (state: InitialStateType = InitialState, action: Act
             return state
     }
 }
-
-// export const setUpdatePriceCart = (payload: any) => {
-//     return {type: "UPDATE-PRICE-CART", payload} as const
-// }
 
 export const deletePriceInBriefcase = (price: number) => {
     return {type: "DELETE-PRICE-IN-CURRENCY", price} as const
@@ -94,4 +90,3 @@ type ActionsType = ReturnType<typeof setInBriefcase>
     | ReturnType<typeof setOldPriceBriefcase>
     | ReturnType<typeof setInBriefcaseFromLocalStorage>
     | ReturnType<typeof deletePriceInBriefcase>
-    // | ReturnType<typeof setUpdatePriceCart>

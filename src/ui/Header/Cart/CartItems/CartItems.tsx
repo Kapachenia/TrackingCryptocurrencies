@@ -1,7 +1,6 @@
 import React from "react";
-import s from "./BriefcaseItem.module.scss"
 import {useDispatch} from "react-redux";
-import {deleteCurrency, deletePriceInBriefcase, setOldPriceBriefcase} from "../../../../bll/setBriefcase";
+import {deleteCurrency, deletePriceInBriefcase, setOldPriceBriefcase} from "../../../../bll/cart";
 
 type BriefcaseItemType = {
     id?: string
@@ -10,7 +9,7 @@ type BriefcaseItemType = {
     price?: number
 }
 
-export const BriefcaseItem = ({
+export const CartItems = ({
                                   id,
                                   name,
                                   count,
@@ -26,17 +25,17 @@ export const BriefcaseItem = ({
     }
 
     return (
-        <div className={s.wrapper}>
-            <div>
+        <div className={'wrapper--inner'}>
+            <div className={'modal__cell-sizes'}>
                 {name}
             </div>
-            <div>
-                {count?.toFixed(2)}
+            <div className={'modal__cell-sizes'}>
+                {`${count?.toFixed(2)} шт.`}
             </div>
-            <div>
-                {price?.toFixed(2)}
+            <div className={'modal__cell-sizes'}>
+                {`${price?.toFixed(2)} $`}
             </div>
-            <div>
+            <div className={'modal__cell-sizes'}>
                 {id && <button onClick={deleteHandler}>x</button>}
             </div>
         </div>

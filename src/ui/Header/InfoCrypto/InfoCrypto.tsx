@@ -1,7 +1,6 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import s from "./InfoCrypto.module.scss"
-import {setDetailsTC, setHistoryTC} from "../../../bll/serDetailsInformation";
+import {setDetailsTC, setHistoryTC} from "../../../bll/detailsInformation";
 import {useNavigate} from "react-router-dom";
 
 type InfoCryptoType = {
@@ -21,10 +20,10 @@ export const InfoCrypto = ({name, priceUsd}: InfoCryptoType) => {
     }
 
     return (
-        <div className={s.wrapper}>
-            <span className={s.item} onClick={clickHandler}>{name}</span>
-            <span>price</span>
-            <span>{Math.floor(+priceUsd)}$</span>
+        <div className={'wrapper__header-content'}>
+            <span className={'header__item pointer width'} onClick={clickHandler}>{name}</span>
+            <span className={'header__item pointer width'}>price</span>
+            <span className={'header__item pointer width'}>{Math.floor(+priceUsd)}$</span>
         </div>
     )
 }

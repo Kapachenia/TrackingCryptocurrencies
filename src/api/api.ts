@@ -23,7 +23,7 @@ export const itemsAPI = {
 }
 
 type ItemsResType = {
-    data: Array<ItemsForHeaderType>
+    data: Array<ItemsDetailType>
     timestamp: number
 }
 
@@ -41,7 +41,7 @@ export type ItemsType = {
     vwap24Hr: string
 }
 
-export type ItemsForHeaderType = {
+export type ItemsDetailType = {
     changePercent24Hr: string
     explorer: string
     id: string

@@ -26,7 +26,6 @@ export const Modal = ({
     const dispatch = useDispatch()
 
     if (!open) return null
-    console.log(currencyValue, 'VALUE')
     const handleSubmit = () => {
         if (currencyValue && currencyValue > 0) {
             dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))

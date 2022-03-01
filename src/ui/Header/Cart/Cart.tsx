@@ -26,7 +26,9 @@ export const Cart = ({
         <div className={'modal'}>
             <div className={'modal__overlay'}/>
             <div className={'modal__wrapper'}>
-                <span className={'modal__name modal__name--inner'}>{name}</span>
+                <span className={'modal__name modal__name--inner'}>{
+                    currencyInBriefcase.length === 0 ? 'Портфель пуст' : name
+                }</span>
                 <div className={'modal__children'}>{children}</div>
                 <div>
                     {currencyInBriefcase.map((m, index) => {

@@ -19,9 +19,11 @@ export const CartItems = ({
     const dispatch = useDispatch()
 
     const deleteHandler = () => {
-        dispatch(deleteCurrency(id))
-        dispatch(deletePriceInBriefcase(Number(price)))
-        dispatch(setOldPriceBriefcase(0))
+        if (window.confirm('Вы уверены, что хотите удалить?')) {
+            dispatch(deleteCurrency(id))
+            dispatch(deletePriceInBriefcase(Number(price)))
+            dispatch(setOldPriceBriefcase(0))
+        }
     }
 
     return (

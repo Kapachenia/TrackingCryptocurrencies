@@ -54,7 +54,7 @@ export const Header = () => {
                     {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
                 </span>
             </div>
-            <div>
+            <div className={'cart-wrapper'}>
                 <Cart open={isOpen}
                       onClose={() => setIsOpen(false)}
                       currencyInBriefcase={currencyInBriefcase}

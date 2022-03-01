@@ -23,15 +23,22 @@ export const Modal = ({
                       }: ModalType) => {
 
     const [currencyValue, setCurrencyValue] = useState<number>(0)
+    const [showMessage, setShowMessage] = useState('')
     const dispatch = useDispatch()
 
     if (!open) return null
+
     const handleSubmit = () => {
         if (currencyValue && currencyValue > 0) {
+            setShowMessage(`Успешно куплено ${currencyValue} ${name}`)
             dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * currencyValue)))
             setCurrencyValue(0)
             dispatch(addPriceInBriefcase(currencyValue * Number(price)))
             dispatch(setOldPriceBriefcase(Number(price) * currencyValue))
+
+            setTimeout(function(){
+                setShowMessage('')
+            }, 3000)
         }
     }
 
@@ -64,6 +71,7 @@ export const Modal = ({
                         <button className={'button pointer'} onClick={onClose}>Закрыть</button>
                     </div>
                 </div>
+                <div className='modal__message--color'>{showMessage}</div>
             </div>
         </div>,
         document.getElementById('portal') as HTMLElement

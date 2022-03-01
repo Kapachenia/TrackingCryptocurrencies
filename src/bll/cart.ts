@@ -21,19 +21,7 @@ export const cart = (state: InitialStateType = InitialState, action: ActionsType
             return {...state, priceBriefcase: action.price + state.priceBriefcase}
         case "SET-IN-BRIEFCASE":
             const newObject = {id: action.id, name: action.name, count: action.count, price: action.price}
-            let test = state.currencyInBriefcase.find(f => f.id == action.id)
-            if (test) {
-                return {
-                    ...state, currencyInBriefcase: state.currencyInBriefcase
-                        .map(m => m.id === action.id ? {
-                            ...m,
-                            count: m.count + action.count,
-                            price: m.price + action.price
-                        } : m)
-                }
-            } else {
-                return {...state, currencyInBriefcase: [...state.currencyInBriefcase, newObject]}
-            }
+            return {...state, currencyInBriefcase: [newObject, ...state.currencyInBriefcase]}
         case "DELETE-CURRENCY":
             return {
                 ...state, currencyInBriefcase: [...state.currencyInBriefcase]

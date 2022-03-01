@@ -34,10 +34,10 @@ export const CartItems = ({
             <div className={'modal__cell-sizes'}>
                 {`${count?.toFixed(2)} шт.`}
             </div>
-            <div className={'modal__cell-sizes'}>
+            <div className={'modal__cell-sizes modal__cell-sizes--price'}>
                 {`${price?.toFixed(2)} $`}
             </div>
-            <div className={'modal__cell-sizes'}>
+            <div className={'modal__cell-sizes modal__cell-sizes--button'}>
                 {id && <button onClick={deleteHandler}>x</button>}
             </div>
         </div>

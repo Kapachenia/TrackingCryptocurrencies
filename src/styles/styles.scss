@@ -81,6 +81,10 @@
   color: green;
 }
 
+.modal__message--color{
+  color: green;
+}
+
 .header__cart {
   flex-direction: row-reverse;
 
@@ -111,9 +115,35 @@
   }
 }
 
+.header__wrapper {
+  background-color: aliceblue;
+}
+
+.header__wrapper__info {
+  background-color: aquamarine;
+}
+
+.cart-wrapper {
+  background-color: green;
+}
+
+.modal {
+  background-color: red;
+}
+
 .modal__cell-sizes {
-  width: 90px;
+  min-width: 90px;
   height: 40px;
+  padding-right: 5px;
+}
+
+.modal__cell-sizes--button {
+  min-width: 30px;
+
+}
+
+.modal__cell-sizes--price {
+  min-width: 120px;
 }
 
 .preloader__inner {
@@ -159,6 +189,10 @@
   padding: 5px;
 }
 
+.highcharts-input-group {
+  display: none;
+}
+
 .wrapper__content__button {
   position: relative;
   z-index: 1;
@@ -176,6 +210,8 @@
 .item-content--name:hover {
   color: green;
 }
+
+
 
 @media screen and (max-width : 700px) {
   .header__wrapper__info {

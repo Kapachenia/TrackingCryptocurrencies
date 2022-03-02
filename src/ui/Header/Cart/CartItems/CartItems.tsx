@@ -7,20 +7,22 @@ type BriefcaseItemType = {
     name?: string
     count?: number
     price?: number
+    idTransaction?: string
 }
 
 export const CartItems = ({
-                                  id,
-                                  name,
-                                  count,
-                                  price
-                              }: BriefcaseItemType) => {
+                              id,
+                              name,
+                              count,
+                              price,
+                              idTransaction
+                          }: BriefcaseItemType) => {
 
     const dispatch = useDispatch()
 
     const deleteHandler = () => {
         if (window.confirm('Вы уверены, что хотите удалить?')) {
-            dispatch(deleteCurrency(id))
+            dispatch(deleteCurrency(idTransaction))
             dispatch(deletePriceInBriefcase(Number(price)))
             dispatch(setOldPriceBriefcase(0))
         }

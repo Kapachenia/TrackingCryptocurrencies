@@ -10,7 +10,6 @@ export const Content = () => {
     const setStatus = useSelector<AppRootStoreType, boolean>(state => state.setReducer.isLoading)
     const error = useSelector<AppRootStoreType, string>(state => state.setReducer.error)
 
-
     return (
         <div>
             <div className={'preloader__inner'}>

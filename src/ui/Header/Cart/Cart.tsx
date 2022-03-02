@@ -38,6 +38,7 @@ export const Cart = ({
                             name={m.name}
                             count={m.count}
                             price={m.price}
+                            idTransaction={m.idTransaction}
                         />
                     })}
                 </div>

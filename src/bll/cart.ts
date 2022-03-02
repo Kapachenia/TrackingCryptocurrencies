@@ -20,12 +20,12 @@ export const cart = (state: InitialStateType = InitialState, action: ActionsType
         case "ADD-PRICE-IN-CURRENCY":
             return {...state, priceBriefcase: action.price + state.priceBriefcase}
         case "SET-IN-BRIEFCASE":
-            const newObject = {id: action.id, name: action.name, count: action.count, price: action.price}
+            const newObject = {id: action.id, name: action.name, count: action.count, price: action.price, idTransaction: action.idTransaction}
             return {...state, currencyInBriefcase: [newObject, ...state.currencyInBriefcase]}
         case "DELETE-CURRENCY":
             return {
                 ...state, currencyInBriefcase: [...state.currencyInBriefcase]
-                    .filter(f => f.id !== action.id)
+                    .filter(f => f.idTransaction !== action.idTransaction)
             }
         default:
             return state
@@ -36,12 +36,12 @@ export const deletePriceInBriefcase = (price: number) => {
     return {type: "DELETE-PRICE-IN-CURRENCY", price} as const
 }
 
-export const setInBriefcase = (id: string, name: string, count: number, price: number) => {
-    return {type: "SET-IN-BRIEFCASE", id, name, count, price} as const
+export const setInBriefcase = (id: string, name: string, count: number, price: number, idTransaction: string) => {
+    return {type: "SET-IN-BRIEFCASE", id, name, count, price, idTransaction} as const
 }
 
-export const deleteCurrency = (id: string | undefined) => {
-    return {type: "DELETE-CURRENCY", id} as const
+export const deleteCurrency = (idTransaction: string | undefined) => {
+    return {type: "DELETE-CURRENCY", idTransaction} as const
 }
 
 export const addPriceInBriefcase = (price: number) => {
@@ -70,6 +70,7 @@ export type BriefcaseType = {
     name: string
     count: number
     price: number
+    idTransaction: string
 }
 
 type ActionsType = ReturnType<typeof setInBriefcase>

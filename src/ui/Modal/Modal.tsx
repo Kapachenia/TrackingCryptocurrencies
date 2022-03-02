@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
 import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/cart";
 import "../../styles/styles.scss"
+import {v1} from "uuid";
 
 type ModalType = {
     open: boolean
@@ -44,7 +45,7 @@ export const Modal = ({
     const handleSubmit = () => {
         if (currencyValue && +currencyValue > 0) {
             setShowMessage(`Успешно куплено ${currencyValue} ${name}`)
-            dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * +currencyValue)))
+            dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * +currencyValue), v1()))
             setCurrencyValue('')
             dispatch(addPriceInBriefcase(+currencyValue * Number(price)))
             dispatch(setOldPriceBriefcase(Number(price) * +currencyValue))

@@ -11,7 +11,7 @@ type InitialStateType = typeof InitialState
 export const infoHeader = (state: InitialStateType = InitialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case "SET-INFO-FOR-HEADER":
-        return {...state, infoForHeader: action.currency}
+            return {...state, infoForHeader: action.currency}
         default:
             return state
     }

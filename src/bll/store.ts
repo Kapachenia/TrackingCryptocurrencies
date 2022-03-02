@@ -15,12 +15,8 @@ const rootReducer = combineReducers({
 export const store = createStore(rootReducer, applyMiddleware(thunk),)
 
 store.subscribe(() => {
-localStorage.setItem('state', JSON.stringify(store.getState().cart.currencyInBriefcase))
+    localStorage.setItem('state', JSON.stringify(store.getState().cart.currencyInBriefcase))
 })
 
 
 export type AppRootStoreType = ReturnType<typeof rootReducer>
-
-
-// @ts-ignore
-window.store = store; // for dev

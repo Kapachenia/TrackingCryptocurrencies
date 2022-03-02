@@ -43,8 +43,10 @@ export const Paginator = () => {
             </div>
             <div>
                 {toArray().map((p, index) => {
-                    return <span className={`paginator__page item-content--name pointer ${currentPage === p ? 'paginator__page__selected' : ''}`} key={index}
-                                 onClick={() => selectPage(p)}>{p}</span>
+                    return <span
+                        className={`paginator__page item-content--name pointer ${currentPage === p ? 'paginator__page__selected' : ''}`}
+                        key={index}
+                        onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
             <div>

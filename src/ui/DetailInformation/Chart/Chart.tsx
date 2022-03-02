@@ -12,26 +12,31 @@ type ChartType = {
 export const Chart = ({symbol}: ChartType) => {
 
     const detailsHistory = useSelector<AppRootStoreType, Array<DetailsHistoryType>>(state => state.setDetailsReducer.detailsHistory)
-
-    console.log(detailsHistory)
+    const errorDetails = useSelector<AppRootStoreType, string>(state => state.setDetailsReducer.errorDetails)
 
     const result = detailsHistory.map(m => m.date)
 
-    console.log(result)
+    let textHeader
+    if (errorDetails !== '') {
+        textHeader = `${errorDetails} statistics are not available at the moment`
+    } else {
+        textHeader = `Статистика стоимости ${symbol} за последние 24ч`
+    }
+
 
     const options = {
         chart: {
             zoomType: 'x'
         },
         title: {
-            text: `Статистика стоимости ${symbol} за последние 24ч`
+            text: textHeader
         },
         xAxis: {
             categories: result.map(m => {
                 const hour = new Date(m.toString()).getHours()
                 const min = new Date(m.toString()).getMinutes()
-               const hours =  hour < 10 ? `0${hour}` : hour
-               const mins =  min < 10 ? `0${min}` : min
+                const hours = hour < 10 ? `0${hour}` : hour
+                const mins = min < 10 ? `0${min}` : min
 
                 return `${hours}:${mins}`
             })

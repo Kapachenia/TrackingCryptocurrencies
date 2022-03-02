@@ -3,7 +3,8 @@ import {Dispatch} from "react";
 
 const InitialState = {
     detailsInformation: {} as ItemsType,
-    detailsHistory: [] as Array<DetailsHistoryType>
+    detailsHistory: [] as Array<DetailsHistoryType>,
+    errorDetails: ''
 }
 
 type InitialStateType = typeof InitialState
@@ -18,6 +19,10 @@ export const detailsInformation = (state: InitialStateType = InitialState, actio
         default:
             return state
     }
+}
+
+export const setErrorDetails = (errorDetails: string) => {
+    return {type: "SET-ERROR-DETAILS", errorDetails} as const
 }
 
 export const setCurrency = (currency: ItemsType) => {
@@ -35,17 +40,28 @@ export const setDetailsTC = (id: string) => {
             .then(res => {
                 dispatch(setCurrency(res.data.data))
             })
+            .catch(err => {
+                console.log(`setDetailsTC ${err.message}`)
+                dispatch(setErrorDetails(err.message))
+                debugger
+            })
     }
 }
 
 export const setHistoryTC = (id: string) => {
     return (dispatch: Dispatch<ActionsType>) => {
-            itemsAPI.setDetailsHistory(id)
-                .then(res => {
-                    dispatch(setDetailsHistory(res.data.data))
-                })
+        itemsAPI.setDetailsHistory(id)
+            .then(res => {
+                dispatch(setDetailsHistory(res.data.data))
+            })
+            .catch(err => {
+                console.log(`setHistoryTC ${err.message}`)
+                dispatch(setErrorDetails(err.message))
+                debugger
+            })
     }
 }
 
 type ActionsType = ReturnType<typeof setCurrency>
     | ReturnType<typeof setDetailsHistory>
+    | ReturnType<typeof setErrorDetails>

@@ -29,7 +29,7 @@ export const CartItems = ({
     }
 
     return (
-        <div className={'wrapper--inner'}>
+        <div className={'wrapper--inner cart-items__wrapper--inner'}>
             <div className={'modal__cell-sizes'}>
                 {name}
             </div>

@@ -42,29 +42,31 @@ export const Header = () => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>
-            <div className={'wrapper--inner header__cart'}>
+            <div className={'header__cart__wrapper'}>
+                <div className={'wrapper--inner header__cart header__cart__wrapper--revers'}>
                 <span className={'header__cart--color header__cart--inner'}>
                     {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
                 </span>
-                <span className={'header__cart--color header__cart--inner'}>{
-                    `+ ${reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)}`
-                } USD</span>
-                <span className={'header__cart--inner'}>
+                    <span className={'header__cart--color header__cart--inner'}>{
+                        `+ ${reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)}`
+                    } USD</span>
+                    <span className={'header__cart--inner'}>
                     {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
                 </span>
-            </div>
-            <div className={'cart-wrapper wrapper--inner'}>
-                <img className={'header__cart--img pointer'}
-                     onClick={() => setIsOpen(true)}
-                     src={img}
-                     alt="cart"
-                />
-                <Cart open={isOpen}
-                      onClose={() => setIsOpen(false)}
-                      currencyInBriefcase={currencyInBriefcase}
-                      name={'Портфель'}
-                >
-                </Cart>
+                </div>
+                <div className={'cart-wrapper wrapper--inner'}>
+                    <img className={'header__cart--img pointer'}
+                         onClick={() => setIsOpen(true)}
+                         src={img}
+                         alt="cart"
+                    />
+                    <Cart open={isOpen}
+                          onClose={() => setIsOpen(false)}
+                          currencyInBriefcase={currencyInBriefcase}
+                          name={'Портфель'}
+                    >
+                    </Cart>
+                </div>
             </div>
         </div>
     )

@@ -43,13 +43,16 @@ export const Modal = ({
     if (!open) return null
 
     const handleSubmit = () => {
-        if (currencyValue && +currencyValue > 0) {
+        if (currencyValue && +currencyValue <= 10) {
             setShowMessage(`Успешно куплено ${currencyValue} ${name}`)
             dispatch(setInBriefcase(id, name, Number(currencyValue), Number(Number(price) * +currencyValue), v1()))
             setCurrencyValue('')
             dispatch(addPriceInBriefcase(+currencyValue * Number(price)))
             dispatch(setOldPriceBriefcase(Number(price) * +currencyValue))
             setToggle(true)
+        } else if (currencyValue && +currencyValue > 10) {
+            setShowMessage(`Лимит покупки 10 единиц`)
+            setCurrencyValue('')
         }
     }
 

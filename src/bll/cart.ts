@@ -1,8 +1,7 @@
 import {Dispatch} from "react";
 
 const InitialState = {
-    currencyInBriefcase: [
-    ] as Array<BriefcaseType>,
+    currencyInBriefcase: [] as Array<BriefcaseType>,
     priceBriefcase: 0,
     oldPriceBriefcase: [0],
 }
@@ -20,7 +19,13 @@ export const cart = (state: InitialStateType = InitialState, action: ActionsType
         case "ADD-PRICE-IN-CURRENCY":
             return {...state, priceBriefcase: action.price + state.priceBriefcase}
         case "SET-IN-BRIEFCASE":
-            const newObject = {id: action.id, name: action.name, count: action.count, price: action.price, idTransaction: action.idTransaction}
+            const newObject = {
+                id: action.id,
+                name: action.name,
+                count: action.count,
+                price: action.price,
+                idTransaction: action.idTransaction
+            }
             return {...state, currencyInBriefcase: [newObject, ...state.currencyInBriefcase]}
         case "DELETE-CURRENCY":
             return {

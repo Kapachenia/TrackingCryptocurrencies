@@ -66,7 +66,7 @@ export const Modal = ({
         <div className={'modal'}>
             <div className={'modal__overlay'}/>
             <div className={'modal__wrapper'}>
-                <span className={'modal__name'}>{name}</span>
+                <span className={'modal__name'}>{`1 ${name} = ${Number(price).toFixed(2)} $`}</span>
                 <div>{children}</div>
                 <div>
                     <div className={'input--inner'}>

@@ -35,7 +35,7 @@ export const Paginator = () => {
 
     return (
         <div className={'wrapper--inner'}>
-            <div>
+            <div className={'paginator_prev'}>
                 {
                     currentPage > 1 &&
                     <button onClick={selectPrevPage}>prev</button>

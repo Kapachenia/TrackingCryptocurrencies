@@ -18,5 +18,4 @@ store.subscribe(() => {
     localStorage.setItem('state', JSON.stringify(store.getState().cart.currencyInBriefcase))
 })
 
-
 export type AppRootStoreType = ReturnType<typeof rootReducer>

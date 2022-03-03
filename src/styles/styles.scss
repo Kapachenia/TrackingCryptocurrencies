@@ -11,6 +11,10 @@
   }
 }
 
+.paginator_prev {
+  width: 42px;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -184,6 +188,7 @@
   padding: 5px;
 
   &__selected {
+    color: green;
     font-weight: bold;
   }
 }

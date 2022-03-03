@@ -10,7 +10,6 @@ type ItemType = {
     symbol: string
     rank: string
     name: string
-    marketCapUsd: string
     supply: string
     price: string
 }
@@ -20,7 +19,6 @@ export const Item = ({
                          price,
                          name,
                          symbol,
-                         marketCapUsd,
                          rank,
                          supply
                      }: ItemType) => {
@@ -45,7 +43,7 @@ export const Item = ({
             <td className={'item-content--cell'}>{rank}</td>
             <td className={'item-content--name item-content--cell pointer hidden'} onClick={clickHandler}>{symbol}</td>
             <td className={'item-content--name item-content--cell pointer'} onClick={clickHandler}>{name}</td>
-            <td className={'item-content--cell item-content--cell'}>${Math.floor(Number.parseInt(marketCapUsd))}</td>
+            <td className={'item-content--cell item-content--cell'}>${Number(price).toFixed(2)}</td>
             <td className={'item-content--cell item-content--cell hidden hidden'}>{Math.floor(Number.parseInt(supply))}</td>
             <Modal
                 open={isOpen}

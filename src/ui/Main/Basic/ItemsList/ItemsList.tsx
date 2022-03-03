@@ -17,7 +17,7 @@ export const ItemsList = () => {
                 <th className={'items-list__box'}>#</th>
                 <th className={'items-list__box hidden'}>Обозначение</th>
                 <th className={'items-list__box'}>Наименование</th>
-                <th className={'items-list__box'}>Предложение</th>
+                <th className={'items-list__box'}>Стоимость</th>
                 <th className={'items-list__box hidden'}>Доступно</th>
             </tr>
             </thead>
@@ -27,7 +27,6 @@ export const ItemsList = () => {
                 symbol={m.symbol}
                 rank={m.rank}
                 name={m.name}
-                marketCapUsd={m.marketCapUsd}
                 supply={m.supply}
                 price={m.priceUsd}
             />))}

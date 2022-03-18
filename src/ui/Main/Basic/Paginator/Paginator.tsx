@@ -1,8 +1,8 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
-import "../../../../styles/styles.scss"
 import {setCurrencyTC, setCurrentPage} from "../../../../bll/setReducer";
+import s from "../Paginator/Paginator.module.scss"
 
 export const Paginator = () => {
 
@@ -34,25 +34,25 @@ export const Paginator = () => {
     }
 
     return (
-        <div className={'wrapper--inner'}>
-            <div className={'paginator_prev'}>
+        <div className={s.paginator}>
+            <div className={s.paginator__prev_inner}>
                 {
                     currentPage > 1 &&
                     <button onClick={selectPrevPage}>prev</button>
                 }
             </div>
-            <div>
+            <div className={''}>
                 {toArray().map((p, index) => {
                     return <span
-                        className={`paginator__page item-content--name pointer ${currentPage === p ? 'paginator__page__selected' : ''}`}
+                        className={`${s.paginator__page} ${currentPage === p ? s.selected : ''}`}
                         key={index}
                         onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
-            <div>
+            <div className={s.paginator__next}>
                 {
                     currentPage < 10 &&
-                    <button className={'pointer'} onClick={selectNextPage}>next</button>
+                    <button className={''} onClick={selectNextPage}>next</button>
                 }
             </div>
         </div>

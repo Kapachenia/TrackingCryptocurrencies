@@ -5,7 +5,7 @@ import {Chart} from "./Chart/Chart";
 import {Modal} from "../Modal/Modal";
 import {useNavigate} from "react-router-dom";
 import {ItemsType} from "../../api/api";
-import "../../styles/styles.scss";
+// import "../../styles/styles.scss";
 import {setCurrencyTC} from "../../bll/setReducer";
 
 export const DetailInformation = () => {
@@ -26,25 +26,25 @@ export const DetailInformation = () => {
     }
 
     return (
-        <div className={'wrapper-center detail '}>
-            <div className={'content-detail'}>
-                <h3 className={'title'}>{errorDetails === undefined ? errorDetails : 'Detail Information'}</h3>
-                <div className={'content-detail__item'}>Символ: {detailsInformation.symbol}</div>
-                <div className={'content-detail__item'}>Название актива: {detailsInformation.name}</div>
-                <div className={'content-detail__item'}>Доступное
+        <div className={''}>
+            <div className={''}>
+                <h3 className={''}>{errorDetails === undefined ? errorDetails : 'Detail Information'}</h3>
+                <div className={''}>Символ: {detailsInformation.symbol}</div>
+                <div className={''}>Название актива: {detailsInformation.name}</div>
+                <div className={''}>Доступное
                     предложение: {toFloor(detailsInformation.supply)}</div>
-                <div className={'content-detail__item'}>Количество
+                <div className={''}>Количество
                     активов: {toFloor(detailsInformation.maxSupply)}</div>
-                <div className={'content-detail__item'}>Цена: {toFloor(detailsInformation.marketCapUsd)}</div>
-                <div className={'content-detail__item'}>Объем торгов за 24
+                <div className={''}>Цена: {toFloor(detailsInformation.marketCapUsd)}</div>
+                <div className={''}>Объем торгов за 24
                     часа: {toFloor(detailsInformation.volumeUsd24Hr)}$
                 </div>
-                <div className={'content-detail__item'}>Цена взвешенная по
+                <div className={''}>Цена взвешенная по
                     объему: {toFloor(detailsInformation.priceUsd)}$
                 </div>
-                <div className={'content-detail__item'}>Направление и значение за 24
+                <div className={''}>Направление и значение за 24
                     часа: {toFloor(detailsInformation.changePercent24Hr)}</div>
-                <div className={'content-detail__item'}>Средневзвешенная за 24
+                <div className={''}>Средневзвешенная за 24
                     часа: {toFloor(detailsInformation.vwap24Hr)}</div>
                 <div>
                     <Modal open={isOpen}
@@ -55,12 +55,12 @@ export const DetailInformation = () => {
                     >
                     </Modal>
                 </div>
-                <div className={'detail-information'}>
-                    <button className={'button--inner'} onClick={() => setIsOpen(true)}>Купить</button>
-                    <button className={'button--inner'} onClick={clickHandler}>Назад</button>
+                <div className={''}>
+                    <button className={''} onClick={() => setIsOpen(true)}>Купить</button>
+                    <button className={''} onClick={clickHandler}>Назад</button>
                 </div>
             </div>
-            <div className={'detail__chart detail'}>
+            <div className={''}>
                 <Chart symbol={detailsInformation.name}/>
             </div>
         </div>

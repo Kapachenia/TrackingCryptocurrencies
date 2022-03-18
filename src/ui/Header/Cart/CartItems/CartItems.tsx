@@ -29,17 +29,17 @@ export const CartItems = ({
     }
 
     return (
-        <div className={'wrapper--inner cart-items__wrapper--inner'}>
-            <div className={'modal__cell-sizes'}>
+        <div className={''}>
+            <div className={''}>
                 {name}
             </div>
-            <div className={'modal__cell-sizes'}>
+            <div className={''}>
                 {`${count?.toFixed(2)} шт.`}
             </div>
-            <div className={'modal__cell-sizes modal__cell-sizes--price'}>
+            <div className={''}>
                 {`${price?.toFixed(2)} $`}
             </div>
-            <div className={'modal__cell-sizes modal__cell-sizes--button'}>
+            <div className={''}>
                 {id && <button onClick={deleteHandler}>x</button>}
             </div>
         </div>

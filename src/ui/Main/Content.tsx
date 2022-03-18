@@ -12,13 +12,13 @@ export const Content = () => {
 
     return (
         <div>
-            <div className={'preloader__inner'}>
-                {setStatus && <div><img className={'preloader__inner--img'} src={preloader} alt={'img'}/></div>}
+            <div className={''}>
+                {setStatus && <div><img className={''} src={preloader} alt={'img'}/></div>}
             </div>
             <Header/>
             {
                 error ?
-                    <div className={'error__basic'}>
+                    <div className={''}>
                         {`${error} Try Again Later`}
                     </div>
                     : <Basic/>

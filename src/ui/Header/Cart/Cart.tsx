@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from 'react-dom';
 import {CartItems} from "./CartItems/CartItems";
 import {BriefcaseType} from "../../../bll/cart";
-import "../../../styles/styles.scss"
+// import "../../../styles/styles.scss"
 
 type CartType = {
     open: boolean
@@ -23,13 +23,13 @@ export const Cart = ({
     if (!open) return null
 
     return ReactDom.createPortal(
-        <div className={'modal'}>
-            <div className={'modal__overlay'}/>
-            <div className={'modal__wrapper'}>
-                <span className={'modal__name modal__name--inner'}>{
+        <div className={''}>
+            <div className={''}/>
+            <div className={''}>
+                <span className={''}>{
                     currencyInBriefcase.length === 0 ? 'Портфель пуст' : name
                 }</span>
-                <div className={'modal__children'}>{children}</div>
+                <div className={''}>{children}</div>
                 <div>
                     {currencyInBriefcase.map((m, index) => {
                         return <CartItems
@@ -42,8 +42,8 @@ export const Cart = ({
                         />
                     })}
                 </div>
-                <div className={'modal__button'}>
-                    <button className={'button--inner'} onClick={onClose}>Close</button>
+                <div className={''}>
+                    <button className={''} onClick={onClose}>Close</button>
                 </div>
             </div>
         </div>,

@@ -6,6 +6,7 @@ import img from "../../asset/cart.png";
 import {Cart} from "./Cart/Cart";
 import {BriefcaseType} from "../../bll/cart";
 import {ItemsType} from "../../api/api";
+import s from "../Header/Header.module.scss"
 
 export const Header = () => {
 
@@ -36,26 +37,29 @@ export const Header = () => {
     }
 
     return (
-        <div className={'wrapper-center wrapper--inner header__wrapper'}>
-            <div className={'header__wrapper__info'}>
+        <div className={s.header}>
+
+            <div className={`${s.container} ${s.header__top}`}>
                 {infoForHeader.map(m => {
                     return <InfoCrypto key={m.id} name={m.name} priceUsd={m.priceUsd}/>
                 })}
             </div>
-            <div className={'header__cart__wrapper'}>
-                <div className={'wrapper--inner header__cart header__cart__wrapper--revers'}>
-                <span className={'header__cart--color header__cart--inner'}>
-                    {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
-                </span>
-                    <span className={'header__cart--color header__cart--inner'}>{
+            {/*//price*/}
+            <div className={s.header__price}>
+                <div className={s.header__cartInfo}>
+                    <span className={s.header__item}>
+                            {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
+                        </span>
+                    <span className={s.header__item}>{
                         `+ ${reductionToNumber === 0 ? 0 : (oldPriceBriefcase[index]).toFixed(2)}`
-                    } USD</span>
-                    <span className={'header__cart--inner'}>
-                    {`${reductionToNumber === undefined ? 0 : Number(reductionToNumber).toFixed(2)} USD`}
-                </span>
+                    } USD
+                        </span>
+                    <span className={s.header__item}>
+                    {`+ ( ${isNaN(ratioResult) ? 0 : ratioResult.toFixed(2)} )%`}
+                    </span>
                 </div>
-                <div className={'cart-wrapper wrapper--inner'}>
-                    <img className={'header__cart--img pointer'}
+                <div className={s.header__buttonCart}>
+                    <img className={s.logo__img}
                          onClick={() => setIsOpen(true)}
                          src={img}
                          alt="cart"

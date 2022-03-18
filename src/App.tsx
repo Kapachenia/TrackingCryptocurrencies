@@ -19,7 +19,7 @@ export const App = () => {
     }, [infoFromLocalStorage, dispatch])
 
     return (
-        <div className={'wrapper-center wrapper__app'}>
+        <div className={'wrapper__app'}>
             <RoutesApp/>
         </div>
     )

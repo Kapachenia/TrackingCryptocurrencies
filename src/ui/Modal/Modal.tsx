@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import ReactDom from 'react-dom';
 import {useDispatch} from "react-redux";
 import {addPriceInBriefcase, setInBriefcase, setOldPriceBriefcase} from "../../bll/cart";
-import "../../styles/styles.scss"
+// import "../../styles/styles.scss"
 import {v1} from "uuid";
 
 type ModalType = {
@@ -63,13 +63,13 @@ export const Modal = ({
     }
 
     return ReactDom.createPortal(
-        <div className={'modal'}>
+        <div className={''}>
             <div className={'modal__overlay'}/>
-            <div className={'modal__wrapper'}>
-                <span className={'modal__name'}>{`1 ${name} = ${Number(price).toFixed(2)} $`}</span>
+            <div className={''}>
+                <span className={''}>{`1 ${name} = ${Number(price).toFixed(2)} $`}</span>
                 <div>{children}</div>
                 <div>
-                    <div className={'input--inner'}>
+                    <div className={''}>
                         <input type="text"
                                placeholder={'0'}
                                value={currencyValue}
@@ -77,15 +77,15 @@ export const Modal = ({
                         />
                     </div>
                 </div>
-                <div className={'modal__wrapper-button wrapper--inner'}>
-                    <div className={'modal__button--inner'}>
-                        <button className={'button pointer'} onClick={handleSubmit}>Купить</button>
+                <div className={''}>
+                    <div className={''}>
+                        <button className={''} onClick={handleSubmit}>Купить</button>
                     </div>
-                    <div className={'modal__button--inner'}>
-                        <button className={'button pointer'} onClick={onClose}>Закрыть</button>
+                    <div className={''}>
+                        <button className={''} onClick={onClose}>Закрыть</button>
                     </div>
                 </div>
-                <div className='modal__message--color'>{showMessage}</div>
+                <div className=''>{showMessage}</div>
             </div>
         </div>,
         document.getElementById('portal') as HTMLElement

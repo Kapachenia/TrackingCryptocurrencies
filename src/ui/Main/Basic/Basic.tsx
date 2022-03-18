@@ -1,15 +1,15 @@
 import React from "react";
 import {Paginator} from "./Paginator/Paginator";
 import {ItemsList} from "./ItemsList/ItemsList";
-import "../../../styles/styles.scss"
+import s from "../Basic/Basic.module.scss"
 
 export const Basic = () => {
     return (
-        <div>
+        <div className={s.content}>
             <div>
                 <ItemsList/>
             </div>
-            <div className={'wrapper-center wrapper-center__block-paginator--inner'}>
+            <div className={''}>
                 <Paginator/>
             </div>
         </div>

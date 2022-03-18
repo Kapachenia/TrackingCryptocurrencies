@@ -1,0 +1,18 @@
+.header__info {
+  width: 200px;
+  text-align: center;
+}
+
+.header__info__item:not(:last-child) {
+  cursor: pointer;
+}
+
+.header__info__item:not(:last-child):hover {
+  color: green;
+}
+
+
+.header__info__item {
+  margin: 10px;
+}
+

@@ -1,0 +1,23 @@
+.paginator {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.paginatorPrev {
+  width: 42px;
+}
+
+.paginatorNext {
+  width: 42px;
+}
+
+.paginator__page {
+  margin: 5px;
+  //color: red;
+  //background-color: aqua;
+}
+
+.selected {
+  color: red;
+}

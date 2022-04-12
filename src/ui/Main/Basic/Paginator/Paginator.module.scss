@@ -4,20 +4,22 @@
   margin: 10px;
 }
 
-.paginatorPrev {
+.paginator__prev_inner {
   width: 42px;
+  padding-right: 10px;
 }
 
-.paginatorNext {
+.paginator__next_inner {
   width: 42px;
+  padding-left: 10px;
 }
 
 .paginator__page {
   margin: 5px;
-  //color: red;
-  //background-color: aqua;
+  cursor: pointer;
 }
 
 .selected {
-  color: red;
+  color: green;
+  font-weight: bold;
 }

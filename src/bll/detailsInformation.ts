@@ -43,7 +43,6 @@ export const setDetailsTC = (id: string) => {
             .catch(err => {
                 console.log(`setDetailsTC ${err.message}`)
                 dispatch(setErrorDetails(err.message))
-                debugger
             })
     }
 }
@@ -57,7 +56,6 @@ export const setHistoryTC = (id: string) => {
             .catch(err => {
                 console.log(`setHistoryTC ${err.message}`)
                 dispatch(setErrorDetails(err.message))
-                debugger
             })
     }
 }

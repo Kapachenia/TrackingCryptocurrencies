@@ -3,7 +3,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import {AppRootStoreType} from "../../../../bll/store";
 import {ItemsType} from "../../../../api/api";
-// import "../../../../styles/styles.scss"
+import s from "../ItemsList/ItemsList.module.scss";
 
 export const ItemsList = () => {
 
@@ -11,14 +11,14 @@ export const ItemsList = () => {
     const pageSize = useSelector<AppRootStoreType, number>(state => state.setReducer.pageSize)
 
     return (
-        <table className={''}>
+        <table className={s.table}>
             <thead>
-            <tr className={''}>
-                <th className={''}>#</th>
-                <th className={''}>Обозначение</th>
-                <th className={''}>Наименование</th>
-                <th className={''}>Стоимость</th>
-                <th className={''}>Доступно</th>
+            <tr className={s.table__names}>
+                <th className={s.table__name}>#</th>
+                <th className={s.table__name}>Обозначение</th>
+                <th className={s.table__name}>Наименование</th>
+                <th className={s.table__name}>Стоимость</th>
+                <th className={s.table__name}>Доступно</th>
             </tr>
             </thead>
             {itemCurrency.slice(0, pageSize).map(m => (<Item

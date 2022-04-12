@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {setDetailsTC, setHistoryTC} from "../../../../../bll/detailsInformation";
 import {useNavigate} from "react-router-dom";
 import {Modal} from "../../../../Modal/Modal";
-// import "../../../../../styles/styles.scss";
+import s from "../Item/Item.module.scss";
 
 type ItemType = {
     id: string
@@ -38,13 +38,13 @@ export const Item = ({
     }
 
     return (
-        <tbody className={''}>
-        <tr className={''}>
-            <td className={''}>{rank}</td>
-            <td className={''} onClick={clickHandler}>{symbol}</td>
-            <td className={''} onClick={clickHandler}>{name}</td>
-            <td className={''}>${Number(price).toFixed(2)}</td>
-            <td className={''}>{Math.floor(Number.parseInt(supply))}</td>
+        <tbody className={s.table__list}>
+        <tr>
+            <td className={s.table__item}>{rank}</td>
+            <td className={`${s.table__item} ${s.pointer}`} onClick={clickHandler}>{symbol}</td>
+            <td className={`${s.table__item} ${s.pointer}`} onClick={clickHandler}>{name}</td>
+            <td className={s.table__item}>${Number(price).toFixed(2)}</td>
+            <td className={s.table__item}>{Math.floor(Number.parseInt(supply))}</td>
             <Modal
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
@@ -53,8 +53,8 @@ export const Item = ({
                 price={price}
             >
             </Modal>
-            <td className={''}>
-                <button className={''} onClick={handleSubmit}>Купить</button>
+            <td>
+                <button className={s.table__button} onClick={handleSubmit}>Купить</button>
             </td>
         </tr>
         </tbody>

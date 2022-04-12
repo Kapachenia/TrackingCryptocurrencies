@@ -49,7 +49,7 @@ export const Paginator = () => {
                         onClick={() => selectPage(p)}>{p}</span>
                 })}
             </div>
-            <div className={s.paginator__next}>
+            <div className={s.paginator__next_inner}>
                 {
                     currentPage < 10 &&
                     <button className={''} onClick={selectNextPage}>next</button>

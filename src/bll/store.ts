@@ -19,3 +19,6 @@ store.subscribe(() => {
 })
 
 export type AppRootStoreType = ReturnType<typeof rootReducer>
+
+//@ts-ignore
+window.store = store; // for dev
